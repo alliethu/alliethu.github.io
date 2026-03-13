@@ -25,12 +25,12 @@ const projects = [
     href: "/tinkering/this-website",
   },
   {
-    title: "Project Three",
+    title: "Tiny Times Games",
     description:
-      "A short description of this experiment. What sparked it, what I explored, and what I learned along the way.",
+      "A suite of age-appropriate word, puzzle, and trivia games built for a kid who just wants to play alongside the grown-ups. Kid-friendly versions of Wordle, the Mini Crossword, Spelling Bee, and trivia — built with React and shipping as a PWA.",
     image: undefined,
     color: "bg-[#c9bfa8]",
-    href: undefined,
+    href: "/tinkering/tiny-times-games",
   },
 ];
 

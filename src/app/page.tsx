@@ -1,34 +1,50 @@
+import FadeImage from "@/components/FadeImage";
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <section className="flex flex-1 flex-col items-center justify-center px-6 py-24 md:py-40">
-      <div className="max-w-2xl text-center">
-        <h1 className="text-4xl font-semibold leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl">
-          Making complex organizations{" "}
-          <br className="hidden sm:inline" />
-          work better.
-        </h1>
-        <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-muted md:text-lg">
-          I&apos;m a design leader who builds systems, frameworks, and
-          cross-functional partnerships that create lasting change. My work
-          lives at the intersection of inclusive design, organizational
-          effectiveness, and scalable governance — weaving these together so
-          teams can ship confidently, consistently, and with care.
-        </p>
-        <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-          <Link
-            href="/about"
-            className="inline-flex h-12 items-center justify-center rounded-full bg-foreground px-8 text-sm font-medium text-background transition-opacity hover:opacity-80"
-          >
-            About me
-          </Link>
-          <Link
-            href="/connect"
-            className="inline-flex h-12 items-center justify-center rounded-full border border-foreground px-8 text-sm font-medium text-foreground transition-opacity hover:opacity-70"
-          >
-            Get in touch
-          </Link>
+    <section className="flex flex-1 flex-col justify-center px-6 py-24 md:py-36">
+      <div className="mx-auto grid w-full max-w-5xl items-center gap-12 md:grid-cols-2 md:gap-16 lg:gap-24">
+        {/* Photo */}
+        <div className="relative aspect-square overflow-hidden rounded-full">
+          <FadeImage
+            src="/headshot.jpg"
+            alt="Allie Thu"
+            className="object-cover object-[center_15%] scale-175"
+          />
+        </div>
+
+        {/* Copy */}
+        <div>
+          <p className="animate-fade-in text-xs font-semibold uppercase tracking-[0.2em] text-muted">
+            Design leadership
+          </p>
+          <h1 className="animate-fade-in-up mt-6 font-serif text-4xl leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl">
+            Making complex organizations{" "}
+            <br />
+            <em className="text-accent">work better.</em>
+          </h1>
+          <p className="animate-fade-in-up animation-delay-200 mt-8 max-w-xl text-base leading-relaxed text-muted md:text-lg">
+            I&apos;m a design leader who builds systems, frameworks, and
+            cross-functional partnerships that create lasting change. My work
+            lives at the intersection of inclusive design, organizational
+            effectiveness, and scalable governance — weaving these together so
+            teams can ship confidently, consistently, and with care.
+          </p>
+          <div className="animate-fade-in-up animation-delay-400 mt-10 flex flex-col gap-4 sm:flex-row">
+            <Link
+              href="/about"
+              className="inline-flex h-12 items-center justify-center rounded-full bg-foreground px-8 text-sm font-medium tracking-wide text-background transition-colors hover:bg-accent"
+            >
+              About me
+            </Link>
+            <Link
+              href="/connect"
+              className="inline-flex h-12 items-center justify-center rounded-full border border-foreground px-8 text-sm font-medium tracking-wide text-foreground transition-colors hover:border-accent hover:text-accent"
+            >
+              Get in touch
+            </Link>
+          </div>
         </div>
       </div>
     </section>

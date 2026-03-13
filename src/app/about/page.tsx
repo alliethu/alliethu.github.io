@@ -8,17 +8,20 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <section className="px-6 py-20 md:py-32">
-      <div className="mx-auto max-w-2xl">
-        <h1 className="text-3xl font-semibold leading-tight tracking-tight text-foreground md:text-4xl lg:text-5xl">
+    <section className="px-6 py-24 md:py-36">
+      <div className="mx-auto w-full max-w-3xl">
+        <p className="animate-fade-in text-xs font-semibold uppercase tracking-[0.2em] text-muted">
+          About me
+        </p>
+        <h1 className="animate-fade-in-up mt-6 font-serif text-4xl leading-snug tracking-tight text-foreground md:text-5xl lg:text-6xl">
           Design leader.
           <br />
-          Systems thinker.
+          <em className="text-accent">Systems thinker.</em>
           <br />
-          People first.
+          <em className="text-accent">People first.</em>
         </h1>
 
-        <div className="mt-10 space-y-6 text-base leading-relaxed text-muted md:text-lg">
+        <div className="animate-fade-in-up animation-delay-200 mt-12 space-y-6 text-base leading-relaxed text-muted md:text-lg md:leading-relaxed">
           <p>
             Hi, I&apos;m Allie Thu (she/her) — a design leader who specializes
             in making organizations work better through systems thinking,

@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #f5f0eb;
   --foreground: #1a1a1a;
-  --muted: #6b6b6b;
-  --accent: #1a1a1a;
-  --border: #e5e5e5;
+  --muted: #5a5a5a;
+  --accent: #b07934;
+  --border: #e0d9d1;
 }
 
 @theme inline {
@@ -14,8 +14,9 @@
   --color-muted: var(--muted);
   --color-accent: var(--accent);
   --color-border: var(--border);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-dm-sans);
   --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-dm-serif);
 }
 
 body {
@@ -28,13 +29,71 @@ body {
 
 ::selection {
   background-color: #1a1a1a;
-  color: #ffffff;
+  color: #f5f0eb;
 }
 
+/* Fade-in animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInSlow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in-slow {
+  animation: fadeInSlow 1.5s ease-in-out forwards;
+  opacity: 0;
+}
+
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
+
+.animation-delay-600 {
+  animation-delay: 0.6s;
+}
+
+/* Smooth link hover transitions */
 a {
-  transition: opacity 0.2s ease;
+  transition: opacity 0.3s ease, color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 
 a:hover {
   opacity: 0.7;
+}
+
+/* Buttons stay full opacity — use color transitions instead */
+a[class*="rounded-full"]:hover {
+  opacity: 1;
 }

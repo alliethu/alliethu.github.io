@@ -8,31 +8,31 @@ export const metadata: Metadata = {
 
 export default function Connect() {
   return (
-    <section className="flex flex-1 flex-col items-center justify-center px-6 py-24 md:py-40">
-      <div className="max-w-2xl text-center">
-        <h1 className="text-3xl font-semibold leading-tight tracking-tight text-foreground md:text-4xl lg:text-5xl">
-          Always up for a meaningful
+    <section className="flex flex-1 flex-col justify-center px-6 py-32 md:py-44">
+      <div className="mx-auto w-full max-w-3xl">
+        <h1 className="animate-fade-in-up font-serif text-4xl leading-snug tracking-tight text-foreground md:text-5xl lg:text-6xl">
+          Always up for a meaningful{" "}
           <br />
-          conversation.
+          <em className="text-accent">conversation.</em>
         </h1>
 
-        <div className="mt-16">
-          <h2 className="text-sm font-semibold uppercase tracking-widest text-muted">
+        <div className="animate-fade-in-up animation-delay-200 mt-20">
+          <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">
             Get in touch
           </h2>
-          <h3 className="mt-4 text-2xl font-semibold text-foreground md:text-3xl">
+          <h3 className="mt-5 font-serif text-3xl text-foreground md:text-4xl">
             Let&apos;s connect.
           </h3>
-          <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-muted md:text-lg">
+          <p className="mt-5 max-w-md text-base leading-relaxed text-muted md:text-lg">
             Whether you want to talk design, swap ideas, or explore working
             together — I&apos;d love to hear from you.
           </p>
         </div>
 
-        <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+        <div className="animate-fade-in-up animation-delay-400 mt-12 flex flex-col gap-4 sm:flex-row">
           <a
             href="mailto:alliethu6@gmail.com?subject=Portfolio%20outreach"
-            className="inline-flex h-12 items-center justify-center rounded-full bg-foreground px-8 text-sm font-medium text-background transition-opacity hover:opacity-80"
+            className="inline-flex h-12 items-center justify-center rounded-full bg-foreground px-8 text-sm font-medium tracking-wide text-background transition-colors hover:bg-accent"
           >
             Email me
           </a>
@@ -40,7 +40,7 @@ export default function Connect() {
             href="https://www.linkedin.com/in/alliethu/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex h-12 items-center justify-center rounded-full border border-foreground px-8 text-sm font-medium text-foreground transition-opacity hover:opacity-70"
+            className="inline-flex h-12 items-center justify-center rounded-full border border-foreground px-8 text-sm font-medium tracking-wide text-foreground transition-colors hover:border-accent hover:text-accent"
           >
             Connect on LinkedIn
           </a>

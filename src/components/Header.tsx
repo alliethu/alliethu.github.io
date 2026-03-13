@@ -9,33 +9,35 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const links = [
-    { href: "/", label: "Home" },
     { href: "/about", label: "About me" },
     { href: "/connect", label: "Connect" },
   ];
 
   return (
-    <header className="w-full border-b border-border">
+    <header className="animate-fade-in w-full border-b border-border">
       <nav
-        className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5 md:px-12"
+        className="mx-auto flex max-w-5xl items-center justify-between px-6 py-6 md:px-12 md:py-8"
         aria-label="Main navigation"
       >
         <Link
           href="/"
-          className="text-lg font-semibold tracking-tight text-foreground"
+          className="font-serif text-xl tracking-tight text-foreground"
         >
           Allie Thu
+          <span className="block text-xs font-sans font-normal tracking-wide text-muted">
+            Design Leader &amp; Systems Thinker
+          </span>
         </Link>
 
         {/* Desktop nav */}
-        <ul className="hidden gap-8 md:flex">
+        <ul className="hidden gap-10 md:flex">
           {links.map((link) => (
             <li key={link.href}>
               <Link
                 href={link.href}
-                className={`text-sm tracking-wide transition-opacity hover:opacity-70 ${
+                className={`text-sm tracking-wide transition-opacity hover:opacity-60 ${
                   pathname === link.href
-                    ? "font-medium text-foreground"
+                    ? "text-foreground border-b-2 border-accent pb-1"
                     : "text-muted"
                 }`}
               >
@@ -53,17 +55,17 @@ export default function Header() {
           aria-label="Toggle navigation menu"
         >
           <span
-            className={`block h-0.5 w-6 bg-foreground transition-transform ${
+            className={`block h-0.5 w-6 bg-foreground transition-transform duration-300 ${
               menuOpen ? "translate-y-2 rotate-45" : ""
             }`}
           />
           <span
-            className={`block h-0.5 w-6 bg-foreground transition-opacity ${
+            className={`block h-0.5 w-6 bg-foreground transition-opacity duration-300 ${
               menuOpen ? "opacity-0" : ""
             }`}
           />
           <span
-            className={`block h-0.5 w-6 bg-foreground transition-transform ${
+            className={`block h-0.5 w-6 bg-foreground transition-transform duration-300 ${
               menuOpen ? "-translate-y-2 -rotate-45" : ""
             }`}
           />
@@ -72,7 +74,7 @@ export default function Header() {
 
       {/* Mobile nav */}
       {menuOpen && (
-        <div className="border-t border-border md:hidden">
+        <div className="animate-fade-in border-t border-border md:hidden">
           <ul className="flex flex-col gap-4 px-6 py-6">
             {links.map((link) => (
               <li key={link.href}>
@@ -81,7 +83,7 @@ export default function Header() {
                   onClick={() => setMenuOpen(false)}
                   className={`text-sm tracking-wide ${
                     pathname === link.href
-                      ? "font-medium text-foreground"
+                      ? "text-foreground border-b-2 border-accent pb-1"
                       : "text-muted"
                   }`}
                 >

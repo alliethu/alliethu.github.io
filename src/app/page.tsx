@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <section className="flex flex-1 flex-col justify-center px-6 py-24 md:py-36">
+    <section className="flex flex-1 flex-col justify-center px-6 py-12 md:py-20">
       <div className="mx-auto grid w-full max-w-5xl items-center gap-12 md:grid-cols-2 md:gap-16 lg:gap-24">
         {/* Photo */}
         <div className="relative aspect-square overflow-hidden rounded-full">

@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="w-full border-t border-border">
-      <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-8 md:px-12">
+      <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-6 md:px-12 md:py-8">
         <p className="text-xs text-muted">
           © {new Date().getFullYear()} Allie Thu
         </p>

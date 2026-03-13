@@ -10,6 +10,7 @@ export default function Header() {
 
   const links = [
     { href: "/about", label: "About me" },
+    { href: "/tinkering", label: "My Tinkering" },
     { href: "/connect", label: "Connect" },
   ];
 
@@ -37,7 +38,7 @@ export default function Header() {
                 href={link.href}
                 className={`text-sm tracking-wide transition-opacity hover:opacity-60 ${
                   pathname === link.href
-                    ? "text-foreground border-b-2 border-accent pb-1"
+                    ? "text-foreground border-b border-foreground pb-1"
                     : "text-muted"
                 }`}
               >
@@ -83,7 +84,7 @@ export default function Header() {
                   onClick={() => setMenuOpen(false)}
                   className={`text-sm tracking-wide ${
                     pathname === link.href
-                      ? "text-foreground border-b-2 border-accent pb-1"
+                      ? "text-foreground border-b border-foreground pb-1"
                       : "text-muted"
                   }`}
                 >

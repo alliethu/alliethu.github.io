@@ -19,7 +19,7 @@ export default function FadeImage({ src, alt, className = "" }: FadeImageProps) 
       fill
       priority
       onLoad={() => setLoaded(true)}
-      className={`transition-opacity duration-[1250ms] ease-in-out ${
+      className={`transition-opacity duration-[800ms] ease-in-out ${
         loaded ? "opacity-100" : "opacity-0"
       } ${className}`}
     />

@@ -8,15 +8,15 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <section className="px-6 py-24 md:py-36">
+    <section className="px-6 py-12 md:py-20">
       <div className="mx-auto w-full max-w-3xl">
         <p className="animate-fade-in text-xs font-semibold uppercase tracking-[0.2em] text-muted">
           About me
         </p>
-        <h1 className="animate-fade-in-up mt-6 font-serif text-4xl leading-snug tracking-tight text-foreground md:text-5xl lg:text-6xl">
+        <h1 className="animate-fade-in-up mt-6 font-serif text-4xl leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl">
           Design leader.
           <br />
-          <em className="text-accent">Systems thinker.</em>
+          Systems thinker.
           <br />
           <em className="text-accent">People first.</em>
         </h1>

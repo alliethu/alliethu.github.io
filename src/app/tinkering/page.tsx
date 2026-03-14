@@ -17,20 +17,20 @@ const projects = [
     href: "/tinkering/daily-debriefer",
   },
   {
-    title: "This Website",
-    description:
-      "My personal portfolio, rebuilt from scratch with Next.js, Tailwind CSS, and deployed to GitHub Pages. A meta experiment in owning my own platform.",
-    image: undefined,
-    color: "bg-[#b8c4cc]",
-    href: "/tinkering/this-website",
-  },
-  {
     title: "Tiny Times Games",
     description:
       "A suite of age-appropriate word, puzzle, and trivia games built for a kid who just wants to play alongside the grown-ups. Kid-friendly versions of Wordle, the Mini Crossword, Spelling Bee, and trivia — built with React and shipping as a PWA.",
     image: undefined,
     color: "bg-[#c9bfa8]",
     href: "/tinkering/tiny-times-games",
+  },
+  {
+    title: "This Website",
+    description:
+      "My personal portfolio, rebuilt from scratch with Next.js, Tailwind CSS, and deployed to GitHub Pages. A meta experiment in owning my own platform.",
+    image: undefined,
+    color: "bg-[#b8c4cc]",
+    href: "/tinkering/this-website",
   },
 ];
 

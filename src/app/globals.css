@@ -110,6 +110,11 @@ a:hover {
   opacity: 1;
 }
 
+/* Buttons with accent hover — let Tailwind hover classes take precedence */
+a[class*="hover\:text-accent"]:hover {
+  color: var(--accent);
+}
+
 /* Buttons stay full opacity — use color transitions instead */
 a[class*="rounded-full"]:hover {
   opacity: 1;

@@ -20,8 +20,7 @@ const projects = [
     title: "Tiny Times Games",
     description:
       "A suite of age-appropriate word, puzzle, and trivia games built for a kid who just wants to play alongside the grown-ups. Kid-friendly versions of Wordle, the Mini Crossword, Spelling Bee, and trivia — built with React and shipping as a PWA.",
-    image: undefined,
-    color: "bg-[#c9bfa8]",
+    image: "/tiny-times-games.png",
     href: "/tinkering/tiny-times-games",
   },
   {

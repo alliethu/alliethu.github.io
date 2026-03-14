@@ -146,7 +146,7 @@ export default function DailyDebriefer() {
               href="https://github.com/alliethu/daily-debriefer"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex rounded-full border border-foreground px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-foreground hover:text-background"
+              className="inline-flex rounded-full border border-foreground px-6 py-3 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
             >
               View on GitHub →
             </a>

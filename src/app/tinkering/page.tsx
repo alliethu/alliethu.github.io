@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "My Tinkering",
+  title: "My tinkering",
   description:
     "A collection of experiments, side projects, and creative explorations by Allie Thu.",
 };

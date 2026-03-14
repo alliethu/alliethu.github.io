@@ -15,7 +15,7 @@ export default function TinyTimesGames() {
           href="/tinkering"
           className="animate-fade-in inline-block text-xs font-semibold uppercase tracking-[0.2em] text-muted"
         >
-          ← Back to My Tinkering
+          ← Back to My tinkering
         </Link>
 
         <h1 className="animate-fade-in-up mt-6 font-serif text-4xl leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl">

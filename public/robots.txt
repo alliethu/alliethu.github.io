@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alliethu.com/sitemap.xml

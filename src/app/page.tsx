@@ -19,7 +19,7 @@ export default function Home() {
           <p className="animate-fade-in text-xs font-semibold uppercase tracking-[0.2em] text-muted">
             Design leadership
           </p>
-          <h1 className="animate-fade-in-up mt-6 font-serif text-4xl leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl">
+          <h1 className="animate-slide-up mt-6 font-serif text-4xl leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl">
             Making complex organizations{" "}
             <br />
             <em className="text-accent">work better.</em>

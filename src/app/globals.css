@@ -74,6 +74,19 @@ body {
   opacity: 0;
 }
 
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
 @keyframes fadeInSlow {
   from {
     opacity: 0;

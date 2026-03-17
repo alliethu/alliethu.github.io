@@ -1,0 +1,19 @@
+name: Accessibility Scanner
+
+on:
+  workflow_dispatch:
+
+jobs:
+  accessibility_scanner:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: github/accessibility-scanner@v2
+        with:
+          urls: |
+            https://alliethu.com
+            https://alliethu.com/about
+            https://alliethu.com/connect
+            https://alliethu.com/tinkering
+          repository: alliethu/alliethu.github.io
+          token: ${{ secrets.GH_TOKEN }}
+          cache_key: cached_results-alliethu.com.json

@@ -46,9 +46,9 @@ export default function Tinkering() {
           <em className="text-accent">&amp; side quests.</em>
         </h1>
         <p className="animate-fade-in-up animation-delay-200 mt-8 max-w-lg text-base leading-relaxed text-muted md:text-lg">
-          A space for the things I tinker with outside of my day-to-day —
-          creative explorations, learning experiments, and ideas I couldn&apos;t
-          let go of.
+          A space for the things I tinker with outside of my day-to-day:
+          creative explorations, learning experiments, and ideas I
+          couldn&apos;t let go of.
         </p>
 
         <div className="mt-16 grid gap-8 sm:grid-cols-2">

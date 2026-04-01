@@ -20,16 +20,14 @@ export default function Home() {
             Design leadership
           </p>
           <h1 className="animate-fade-in-up mt-6 font-serif text-4xl leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl">
-            Making complex organizations{" "}
-            <br />
-            <em className="text-accent">work better.</em>
+            Making complex organizations work better,{" "}
+            <em className="text-accent">together.</em>
           </h1>
           <p className="animate-fade-in-up animation-delay-200 mt-8 max-w-xl text-base leading-relaxed text-muted md:text-lg">
-            I&apos;m a design leader who builds systems, frameworks, and
-            cross-functional partnerships that create lasting change. My work
-            lives at the intersection of inclusive design, organizational
-            effectiveness, and scalable governance — weaving these together so
-            teams can ship confidently, consistently, and with care.
+            I lead teams through the messy, structural work that rarely gets the
+            attention it deserves: building the systems, standards, and
+            cross-functional partnerships that make good, inclusive work
+            repeatable at scale.
           </p>
           <div className="animate-fade-in-up animation-delay-400 mt-10 flex flex-col gap-4 sm:flex-row">
             <Link

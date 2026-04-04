@@ -1,52 +1,208 @@
-import FadeImage from "@/components/FadeImage";
-import LocalTime from "@/components/LocalTime";
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import { useTheme } from "@/components/ThemeProvider";
+import { FadeIn } from "@/components/FadeIn";
+
+const NAV_LINKS = [
+  { href: "/about", label: "About me" },
+  { href: "/off-the-clock", label: "Off the clock" },
+  { href: "/always-learning", label: "Always learning" },
+  { href: "/tinkering", label: "My tinkering" },
+];
 
 export default function Home() {
+  const theme = useTheme();
+  const [entered, setEntered] = useState(false);
+
   return (
-    <section className="flex flex-1 flex-col justify-center px-6 py-12 md:py-20">
-      <div className="mx-auto grid w-full max-w-5xl items-center gap-12 md:grid-cols-2 md:gap-16 lg:gap-24">
-        {/* Photo */}
-        <div className="relative aspect-square overflow-hidden rounded-full">
-          <FadeImage
-            src="/headshot.jpg"
-            alt="Allie Thu"
-            className="object-cover object-[center_15%] scale-175"
+    <section
+      className="relative flex min-h-[80vh] flex-col items-center justify-center overflow-hidden px-6"
+    >
+      {/* ── Ambient sky glow ── */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background: theme.ambientGlow,
+          transition: "background 1.5s ease",
+        }}
+      />
+
+      {/* ── Act 1: The Greeting ── */}
+      <div
+        className="flex flex-col items-center text-center"
+        style={{
+          opacity: entered ? 0 : 1,
+          transform: entered
+            ? "translateY(-20px) scale(0.98)"
+            : "translateY(0) scale(1)",
+          transition: "opacity 0.8s ease, transform 0.8s ease",
+          position: entered ? "absolute" : "relative",
+          pointerEvents: entered ? "none" : "auto",
+        }}
+      >
+        {/* Time — the hero */}
+        <FadeIn delay={300}>
+          <h1
+            className="font-serif"
+            style={{
+              fontSize: "clamp(3rem, 8vw, 4.5rem)",
+              fontWeight: 300,
+              lineHeight: 1,
+              margin: 0,
+              color: theme.text,
+              letterSpacing: "-0.02em",
+              textShadow: theme.textGlow,
+            }}
+          >
+            {theme.time}
+          </h1>
+        </FadeIn>
+
+        {/* "where I am" — small caps label */}
+        <FadeIn delay={600}>
+          <p
+            className="font-sans"
+            style={{
+              fontSize: "0.6875rem",
+              fontWeight: 600,
+              color: theme.muted,
+              margin: "14px 0 0 0",
+              letterSpacing: "0.2em",
+              textTransform: "uppercase",
+            }}
+          >
+            where I am
+          </p>
+        </FadeIn>
+
+        {/* Decorative line */}
+        <FadeIn delay={900}>
+          <div
+            style={{
+              width: 48,
+              height: 1,
+              margin: "28px 0",
+              background: theme.lineColor,
+            }}
           />
+        </FadeIn>
+
+        {/* Warm message */}
+        <FadeIn delay={1100}>
+          <p
+            className="font-serif italic"
+            style={{
+              fontSize: "1.25rem",
+              lineHeight: 1.6,
+              color: theme.muted,
+              margin: 0,
+              maxWidth: 340,
+            }}
+          >
+            Wherever you are, I hope you&apos;re having a good one.
+          </p>
+        </FadeIn>
+
+        {/* "Come on in" CTA */}
+        <FadeIn delay={1500} style={{ marginTop: 40 }}>
+          <button
+            onClick={() => setEntered(true)}
+            className="pill-btn"
+            style={{
+              color: theme.linkAccent,
+              borderColor: theme.lineColor,
+            }}
+          >
+            Come on in &rarr;
+          </button>
+        </FadeIn>
+      </div>
+
+      {/* ── Act 2: The Intro (fades in after click) ── */}
+      <div
+        className="flex flex-col items-center gap-12 md:flex-row md:gap-14"
+        style={{
+          opacity: entered ? 1 : 0,
+          transform: entered ? "translateY(0)" : "translateY(20px)",
+          transition: "opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s",
+          maxWidth: 960,
+          pointerEvents: entered ? "auto" : "none",
+          position: entered ? "relative" : "absolute",
+        }}
+      >
+        {/* Photo */}
+        <div className="shrink-0">
+          <div
+            className="relative overflow-hidden rounded-full"
+            style={{
+              width: 280,
+              height: 280,
+              border: "3px solid rgba(255,255,255,0.3)",
+            }}
+          >
+            <Image
+              src="/headshot.jpg"
+              alt="Allie Thu"
+              fill
+              priority
+              className="object-cover object-[center_15%] scale-175"
+            />
+          </div>
         </div>
 
-        {/* Copy */}
-        <div>
-          <p className="animate-fade-in text-xs font-semibold uppercase tracking-[0.2em] text-muted">
-            Design leadership
+        {/* Intro text */}
+        <div style={{ maxWidth: 500 }}>
+          <h2
+            className="font-serif"
+            style={{
+              fontSize: "clamp(1.5rem, 3vw, 2.125rem)",
+              fontWeight: 400,
+              lineHeight: 1.3,
+              margin: 0,
+              color: theme.text,
+            }}
+          >
+            I&apos;m Allie — a design leader, builder, and systems thinker with
+            15+ years in tech. This is{" "}
+            <em style={{ color: theme.accent, fontStyle: "italic" }}>
+              my corner of the internet.
+            </em>
+          </h2>
+
+          <p
+            className="font-sans"
+            style={{
+              fontSize: "0.9375rem",
+              color: theme.muted,
+              lineHeight: 1.75,
+              marginTop: 24,
+            }}
+          >
+            Currently at GitHub. I lead design teams by day, chase my kid up
+            mountains on weekends, and end every night with a YA novel I probably
+            shouldn&apos;t love this much.
           </p>
-          <h1 className="animate-fade-in-up mt-6 font-serif text-4xl leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl">
-            Making complex organizations work better,{" "}
-            <em className="text-accent">together.</em>
-          </h1>
-          <p className="animate-fade-in-up animation-delay-200 mt-8 max-w-xl text-base leading-relaxed text-muted md:text-lg">
-            I lead teams through the messy, structural work that rarely gets the
-            attention it deserves: building the systems, standards, and
-            cross-functional partnerships that make good, inclusive work
-            repeatable at scale.
-          </p>
-          <div className="animate-fade-in-up animation-delay-400 mt-10 flex flex-col gap-4 sm:flex-row">
-            <Link
-              href="/about"
-              className="inline-flex h-12 items-center justify-center rounded-full bg-foreground px-8 text-sm font-medium tracking-wide text-background transition-colors hover:bg-accent"
-            >
-              About me
-            </Link>
-            <Link
-              href="/connect"
-              className="inline-flex h-12 items-center justify-center rounded-full border border-foreground px-8 text-sm font-medium tracking-wide text-foreground transition-colors hover:border-accent hover:text-accent"
-            >
-              Get in touch
-            </Link>
+
+          <div className="mt-9 flex flex-wrap gap-2.5">
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="pill-btn"
+                style={{
+                  color: theme.linkAccent,
+                  borderColor: theme.lineColor,
+                }}
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
         </div>
       </div>
-      <LocalTime />
     </section>
   );
 }

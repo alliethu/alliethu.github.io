@@ -1,35 +1,45 @@
-import type { Metadata } from "next";
-import Link from "next/link";
+"use client";
 
-export const metadata: Metadata = {
-  title: "This Website",
-  description:
-    "How I rebuilt my personal portfolio from Wix to a custom Next.js site on GitHub Pages.",
-};
+import Link from "next/link";
+import { useTheme } from "@/components/ThemeProvider";
 
 export default function ThisWebsite() {
+  const theme = useTheme();
+
   return (
     <section className="px-6 py-12 md:py-20">
       <div className="mx-auto w-full max-w-3xl">
         <Link
           href="/tinkering"
-          className="animate-fade-in inline-block text-xs font-semibold uppercase tracking-[0.2em] text-muted"
+          className="animate-fade-in inline-block text-xs font-semibold uppercase tracking-[0.2em]"
+          style={{ color: theme.muted }}
         >
-          ← Back to My tinkering
+          &larr; Back to My tinkering
         </Link>
 
-        <h1 className="animate-fade-in-up mt-6 font-serif text-4xl leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl">
+        <h1
+          className="animate-fade-in-up mt-6 font-serif text-4xl leading-tight tracking-tight md:text-5xl lg:text-6xl"
+          style={{ color: theme.text }}
+        >
           This Website
         </h1>
-        <p className="animate-fade-in-up animation-delay-200 mt-6 max-w-lg text-base leading-relaxed text-muted md:text-lg">
+        <p
+          className="animate-fade-in-up animation-delay-200 mt-6 max-w-lg text-base leading-relaxed md:text-lg"
+          style={{ color: theme.muted }}
+        >
           My personal portfolio, rebuilt from scratch — because owning your
           platform matters.
         </p>
 
         <div className="animate-fade-in-up animation-delay-400 mt-12 space-y-8">
           <div>
-            <h2 className="font-serif text-2xl text-foreground">The story</h2>
-            <div className="mt-3 space-y-4 text-base leading-relaxed text-muted md:text-lg md:leading-relaxed">
+            <h2 className="font-serif text-2xl" style={{ color: theme.text }}>
+              The story
+            </h2>
+            <div
+              className="mt-3 space-y-4 text-base leading-relaxed md:text-lg md:leading-relaxed"
+              style={{ color: theme.muted }}
+            >
               <p>
                 My portfolio lived on Wix for years. It worked fine, but I
                 wanted more control — over the design, the performance, and what
@@ -45,27 +55,30 @@ export default function ThisWebsite() {
           </div>
 
           <div>
-            <h2 className="font-serif text-2xl text-foreground">
+            <h2 className="font-serif text-2xl" style={{ color: theme.text }}>
               What I focused on
             </h2>
-            <ul className="mt-3 space-y-3 text-base leading-relaxed text-muted md:text-lg md:leading-relaxed">
+            <ul
+              className="mt-3 space-y-3 text-base leading-relaxed md:text-lg md:leading-relaxed"
+              style={{ color: theme.muted }}
+            >
               <li>
-                <strong className="text-foreground">Design fidelity</strong> —
+                <strong style={{ color: theme.text }}>Design fidelity</strong> —
                 warm cream palette, Playfair Display headings, DM Sans body
                 copy, subtle fade-in animations
               </li>
               <li>
-                <strong className="text-foreground">Accessibility</strong> —
+                <strong style={{ color: theme.text }}>Accessibility</strong> —
                 semantic heading hierarchy, WCAG AA color contrast, visible
                 focus indicators, responsive layout
               </li>
               <li>
-                <strong className="text-foreground">Performance</strong> —
+                <strong style={{ color: theme.text }}>Performance</strong> —
                 static export means every page is pre-rendered HTML, no
                 client-side rendering needed
               </li>
               <li>
-                <strong className="text-foreground">Simplicity</strong> — no
+                <strong style={{ color: theme.text }}>Simplicity</strong> — no
                 CMS, no database, just code. Content lives right in the
                 components.
               </li>
@@ -73,7 +86,9 @@ export default function ThisWebsite() {
           </div>
 
           <div>
-            <h2 className="font-serif text-2xl text-foreground">Built with</h2>
+            <h2 className="font-serif text-2xl" style={{ color: theme.text }}>
+              Built with
+            </h2>
             <ul className="mt-3 flex flex-wrap gap-2">
               {[
                 "Next.js",
@@ -84,7 +99,11 @@ export default function ThisWebsite() {
               ].map((tech) => (
                 <li
                   key={tech}
-                  className="rounded-full border border-border px-3 py-1 text-sm text-muted"
+                  className="rounded-full px-3 py-1 text-sm"
+                  style={{
+                    border: `1px solid ${theme.accent}30`,
+                    color: theme.muted,
+                  }}
                 >
                   {tech}
                 </li>
@@ -97,9 +116,13 @@ export default function ThisWebsite() {
               href="https://github.com/alliethu/alliethu.github.io"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex rounded-full border border-foreground px-6 py-3 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
+              className="pill-btn"
+              style={{
+                color: theme.linkAccent,
+                borderColor: theme.lineColor,
+              }}
             >
-              View on GitHub →
+              View on GitHub &rarr;
             </a>
           </div>
         </div>

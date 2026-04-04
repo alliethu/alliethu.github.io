@@ -1,4 +1,5 @@
 import FadeImage from "@/components/FadeImage";
+import LocalTime from "@/components/LocalTime";
 import Link from "next/link";
 
 export default function Home() {
@@ -45,6 +46,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <LocalTime />
     </section>
   );
 }

@@ -1,37 +1,45 @@
-import type { Metadata } from "next";
-import Link from "next/link";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Tiny Times Games",
-  description:
-    "A suite of age-appropriate word, puzzle, and trivia games built for a kid who just wants to play alongside the grown-ups.",
-};
+import Link from "next/link";
+import { useTheme } from "@/components/ThemeProvider";
 
 export default function TinyTimesGames() {
+  const theme = useTheme();
+
   return (
     <section className="px-6 py-12 md:py-20">
       <div className="mx-auto w-full max-w-3xl">
         <Link
           href="/tinkering"
-          className="animate-fade-in inline-block text-xs font-semibold uppercase tracking-[0.2em] text-muted"
+          className="animate-fade-in inline-block text-xs font-semibold uppercase tracking-[0.2em]"
+          style={{ color: theme.muted }}
         >
-          ← Back to My tinkering
+          &larr; Back to My tinkering
         </Link>
 
-        <h1 className="animate-fade-in-up mt-6 font-serif text-4xl leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl">
+        <h1
+          className="animate-fade-in-up mt-6 font-serif text-4xl leading-tight tracking-tight md:text-5xl lg:text-6xl"
+          style={{ color: theme.text }}
+        >
           Tiny Times Games
         </h1>
-        <p className="animate-fade-in-up animation-delay-200 mt-6 max-w-lg text-base leading-relaxed text-muted md:text-lg">
+        <p
+          className="animate-fade-in-up animation-delay-200 mt-6 max-w-lg text-base leading-relaxed md:text-lg"
+          style={{ color: theme.muted }}
+        >
           A suite of age-appropriate word, puzzle, and trivia games built for a
           kid who just wants to play alongside the grown-ups.
         </p>
 
         <div className="animate-fade-in-up animation-delay-400 mt-12 space-y-8">
           <div>
-            <h2 className="font-serif text-2xl text-foreground">
+            <h2 className="font-serif text-2xl" style={{ color: theme.text }}>
               The problem
             </h2>
-            <div className="mt-3 space-y-4 text-base leading-relaxed text-muted md:text-lg md:leading-relaxed">
+            <div
+              className="mt-3 space-y-4 text-base leading-relaxed md:text-lg md:leading-relaxed"
+              style={{ color: theme.muted }}
+            >
               <p>
                 My son is almost seven, and he loves games. He&apos;d watch my
                 husband and me play NYT Wordle, the Mini Crossword, Spelling
@@ -51,10 +59,13 @@ export default function TinyTimesGames() {
           </div>
 
           <div>
-            <h2 className="font-serif text-2xl text-foreground">
+            <h2 className="font-serif text-2xl" style={{ color: theme.text }}>
               The parallel
             </h2>
-            <div className="mt-3 space-y-4 text-base leading-relaxed text-muted md:text-lg md:leading-relaxed">
+            <div
+              className="mt-3 space-y-4 text-base leading-relaxed md:text-lg md:leading-relaxed"
+              style={{ color: theme.muted }}
+            >
               <p>
                 I work in accessibility design, and the thing I keep coming back
                 to is that accessibility is really about inclusion — making sure
@@ -73,8 +84,13 @@ export default function TinyTimesGames() {
           </div>
 
           <div>
-            <h2 className="font-serif text-2xl text-foreground">The build</h2>
-            <div className="mt-3 space-y-4 text-base leading-relaxed text-muted md:text-lg md:leading-relaxed">
+            <h2 className="font-serif text-2xl" style={{ color: theme.text }}>
+              The build
+            </h2>
+            <div
+              className="mt-3 space-y-4 text-base leading-relaxed md:text-lg md:leading-relaxed"
+              style={{ color: theme.muted }}
+            >
               <p>
                 I built it in React using GitHub Copilot CLI — a similar
                 collaborative vibe to how I built Daily Debriefer with Claude,
@@ -94,10 +110,13 @@ export default function TinyTimesGames() {
           </div>
 
           <div>
-            <h2 className="font-serif text-2xl text-foreground">
+            <h2 className="font-serif text-2xl" style={{ color: theme.text }}>
               Why it matters beyond the app
             </h2>
-            <p className="mt-3 text-base leading-relaxed text-muted md:text-lg md:leading-relaxed">
+            <p
+              className="mt-3 text-base leading-relaxed md:text-lg md:leading-relaxed"
+              style={{ color: theme.muted }}
+            >
               This is a small, personal project. But it captures something I
               believe deeply: good design starts with knowing your user, and the
               best way to know your user is to care about them. Sometimes that
@@ -108,13 +127,19 @@ export default function TinyTimesGames() {
           </div>
 
           <div>
-            <h2 className="font-serif text-2xl text-foreground">Built with</h2>
+            <h2 className="font-serif text-2xl" style={{ color: theme.text }}>
+              Built with
+            </h2>
             <ul className="mt-3 flex flex-wrap gap-2">
               {["React", "GitHub Copilot CLI", "PWA", "TypeScript"].map(
                 (tech) => (
                   <li
                     key={tech}
-                    className="rounded-full border border-border px-3 py-1 text-sm text-muted"
+                    className="rounded-full px-3 py-1 text-sm"
+                    style={{
+                      border: `1px solid ${theme.accent}30`,
+                      color: theme.muted,
+                    }}
                   >
                     {tech}
                   </li>
@@ -128,9 +153,13 @@ export default function TinyTimesGames() {
               href="https://github.com/alliethu/tiny-times-games"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex rounded-full border border-foreground px-6 py-3 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
+              className="pill-btn"
+              style={{
+                color: theme.linkAccent,
+                borderColor: theme.lineColor,
+              }}
             >
-              View on GitHub →
+              View on GitHub &rarr;
             </a>
           </div>
         </div>

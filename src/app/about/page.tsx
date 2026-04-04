@@ -1,27 +1,35 @@
-import type { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "About Me",
-  description:
-    "Design leader specializing in systems thinking, cross-functional partnership, and inclusive design.",
-};
+import type { Metadata } from "next";
+import { useTheme } from "@/components/ThemeProvider";
 
 export default function About() {
+  const theme = useTheme();
+
   return (
     <section className="px-6 py-12 md:py-20">
       <div className="mx-auto w-full max-w-3xl">
-        <p className="animate-fade-in text-xs font-semibold uppercase tracking-[0.2em] text-muted">
+        <p
+          className="animate-fade-in text-xs font-semibold uppercase tracking-[0.2em]"
+          style={{ color: theme.muted }}
+        >
           About me
         </p>
-        <h1 className="animate-fade-in-up mt-6 font-serif text-4xl leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl">
+        <h1
+          className="animate-fade-in-up mt-6 font-serif text-4xl leading-tight tracking-tight md:text-5xl lg:text-6xl"
+          style={{ color: theme.text }}
+        >
           Better systems.
           <br />
           Less friction.
           <br />
-          <em className="text-accent">People first.</em>
+          <em style={{ color: theme.accent }}>People first.</em>
         </h1>
 
-        <div className="animate-fade-in-up animation-delay-200 mt-12 space-y-6 text-base leading-relaxed text-muted md:text-lg md:leading-relaxed">
+        <div
+          className="animate-fade-in-up animation-delay-200 mt-12 space-y-6 text-base leading-relaxed md:text-lg md:leading-relaxed"
+          style={{ color: theme.muted }}
+        >
           <p>
             Hi, I&apos;m Allie Thu (she/her). I&apos;m a design leader who
             focuses on the messy, structural work that rarely gets the attention
@@ -52,7 +60,10 @@ export default function About() {
             design is just the beginning.
           </p>
 
-          <p>
+          <p
+            className="font-serif italic"
+            style={{ color: theme.accent, fontSize: "1.0625rem", marginTop: 28 }}
+          >
             Outside of work, I&apos;m a parent to an endlessly curious little
             human, partner to the love of my life, and someone who recharges by
             getting outside: hiking, lifting, and chasing the next family

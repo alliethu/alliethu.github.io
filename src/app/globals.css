@@ -1,23 +1,37 @@
 @import "tailwindcss";
 
+/* ─── Default (afternoon) — overridden at runtime by ThemeProvider ──────── */
 :root {
-  --background: #f5f0eb;
+  --background: #f5f0ea;
   --foreground: #1a1a1a;
-  --muted: #5a5a5a;
-  --accent: #b07934;
-  --border: #e0d9d1;
+  --muted: #6b6b6b;
+  --accent: #a67c08;
+  --link-accent: #845f08;
+  --line-color: rgba(166, 124, 8, 0.25);
+  --card-bg: rgba(255, 255, 255, 0.5);
+  --ambient-glow: radial-gradient(
+    ellipse 70% 50% at 50% 0%,
+    rgba(250, 220, 140, 0.25) 0%,
+    rgba(245, 200, 100, 0.1) 50%,
+    transparent 70%
+  );
+  --nav-border: linear-gradient(to right, #a67c08, transparent);
 }
 
 @theme inline {
-  --color-background: var(--background);
+  --color-background: var(--foreground);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-accent: var(--accent);
-  --color-border: var(--border);
+  --color-link-accent: var(--link-accent);
+  --color-line-color: var(--line-color);
+  --color-card-bg: var(--card-bg);
   --font-sans: var(--font-dm-sans);
   --font-mono: var(--font-geist-mono);
   --font-serif: var(--font-dm-serif);
 }
+
+/* ─── Body ──────────────────────────────────────────────────────────────── */
 
 body {
   background: var(--background);
@@ -25,47 +39,38 @@ body {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background 2s ease, color 1s ease;
 }
 
 ::selection {
-  background-color: #1a1a1a;
+  background-color: var(--foreground);
   color: #f5f0eb;
 }
 
-/* Fade-in animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+/* ─── Fade-in animations ────────────────────────────────────────────────── */
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeInUpSubtle {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.animate-fade-in-up-subtle {
-  animation: fadeInUpSubtle 1s ease-in-out forwards;
+@keyframes fadeInSlow {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
   opacity: 0;
 }
 
@@ -74,13 +79,9 @@ body {
   opacity: 0;
 }
 
-@keyframes fadeInSlow {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.animate-fade-in-up-subtle {
+  animation: fadeInUpSubtle 1s ease-in-out forwards;
+  opacity: 0;
 }
 
 .animate-fade-in-slow {
@@ -88,39 +89,74 @@ body {
   opacity: 0;
 }
 
-.animation-delay-200 {
-  animation-delay: 0.2s;
+.animation-delay-200 { animation-delay: 0.2s; }
+.animation-delay-400 { animation-delay: 0.4s; }
+.animation-delay-600 { animation-delay: 0.6s; }
+.animation-delay-800 { animation-delay: 0.8s; }
+.animation-delay-1000 { animation-delay: 1.0s; }
+.animation-delay-1200 { animation-delay: 1.2s; }
+
+/* ─── Ambient glow background ───────────────────────────────────────────── */
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
-.animation-delay-400 {
-  animation-delay: 0.4s;
+@keyframes gentleBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
 }
 
-.animation-delay-600 {
-  animation-delay: 0.6s;
+@keyframes eq {
+  0% { height: 4px; }
+  100% { height: 18px; }
 }
 
-/* Smooth link hover transitions */
+/* ─── Link & button transitions ─────────────────────────────────────────── */
+
 a {
-  transition: opacity 0.3s ease, color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  transition: opacity 0.3s ease, color 0.3s ease, background-color 0.3s ease,
+    border-color 0.3s ease;
 }
 
-a:hover {
-  color: var(--foreground);
-  opacity: 1;
+/* ─── Pill button (shared style for nav links on homepage) ──────────────── */
+
+.pill-btn {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--link-accent);
+  background: transparent;
+  border: 1px solid var(--line-color);
+  border-radius: 24px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
 }
 
-/* Buttons with accent hover — let Tailwind hover classes take precedence */
-a[class*="hover\:text-accent"]:hover {
-  color: var(--accent);
+.pill-btn:hover {
+  background: var(--line-color);
 }
 
-/* Buttons stay full opacity — use color transitions instead */
-a[class*="rounded-full"]:hover {
-  opacity: 1;
+/* ─── Animated nav line ─────────────────────────────────────────────────── */
+
+.nav-line {
+  height: 1.5px;
+  background: var(--nav-border);
+  width: 0%;
+  transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Gold focus ring for accessibility */
+.nav-line.expanded {
+  width: 100%;
+}
+
+/* ─── Gold focus ring for accessibility ─────────────────────────────────── */
+
 *:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;

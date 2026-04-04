@@ -1,12 +1,9 @@
-import type { Metadata } from "next";
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-
-export const metadata: Metadata = {
-  title: "My tinkering",
-  description:
-    "A collection of experiments, side projects, and creative explorations by Allie Thu.",
-};
+import { useTheme } from "@/components/ThemeProvider";
+import { FadeIn } from "@/components/FadeIn";
 
 const projects = [
   {
@@ -15,6 +12,7 @@ const projects = [
       "A private leadership journal with AI-powered synthesis. Captures daily reflections — wins, tensions, energy levels, and relationship dynamics — then uses Claude to surface patterns and generate 1:1 prep and quarterly narratives. Built with Next.js, Supabase, and the Anthropic API.",
     image: "/daily-debriefer.png",
     href: "/tinkering/daily-debriefer",
+    tags: ["Next.js", "Supabase", "Claude"],
   },
   {
     title: "Tiny Times Games",
@@ -22,6 +20,7 @@ const projects = [
       "A suite of age-appropriate word, puzzle, and trivia games built for a kid who just wants to play alongside the grown-ups. Kid-friendly versions of Wordle, the Mini Crossword, Spelling Bee, and trivia — built with React and shipping as a PWA.",
     image: "/tiny-times-games.png",
     href: "/tinkering/tiny-times-games",
+    tags: ["React", "PWA"],
   },
   {
     title: "This Website",
@@ -30,37 +29,54 @@ const projects = [
     image: undefined,
     color: "bg-[#b8c4cc]",
     href: "/tinkering/this-website",
+    tags: ["Next.js", "Tailwind"],
   },
 ];
 
 export default function Tinkering() {
+  const theme = useTheme();
+
   return (
     <section className="px-6 py-12 md:py-20">
       <div className="mx-auto w-full max-w-3xl">
-        <p className="animate-fade-in text-xs font-semibold uppercase tracking-[0.2em] text-muted">
-          My tinkering
-        </p>
-        <h1 className="animate-fade-in-up mt-6 font-serif text-4xl leading-snug tracking-tight text-foreground md:text-5xl lg:text-6xl">
-          Experiments
-          <br />
-          <em className="text-accent">&amp; side quests.</em>
-        </h1>
-        <p className="animate-fade-in-up animation-delay-200 mt-8 max-w-lg text-base leading-relaxed text-muted md:text-lg">
-          A space for the things I tinker with outside of my day-to-day:
-          creative explorations, learning experiments, and ideas I
-          couldn&apos;t let go of.
-        </p>
+        <FadeIn delay={100}>
+          <p
+            className="text-xs font-semibold uppercase tracking-[0.15em]"
+            style={{ color: theme.muted, marginBottom: 12 }}
+          >
+            My tinkering
+          </p>
+          <h1
+            className="font-serif text-4xl leading-snug tracking-tight md:text-5xl"
+            style={{ color: theme.text }}
+          >
+            Experiments
+            <br />
+            <em style={{ color: theme.accent }}>&amp; side quests.</em>
+          </h1>
+          <p
+            className="mt-4 max-w-lg font-sans text-base leading-relaxed"
+            style={{ color: theme.muted, marginBottom: 48 }}
+          >
+            A space for the things I tinker with outside of my day-to-day:
+            creative explorations, learning experiments, and ideas I
+            couldn&apos;t let go of.
+          </p>
+        </FadeIn>
 
-        <div className="mt-16 grid gap-8 sm:grid-cols-2">
-          {projects.map((project, i) => {
-            const cardClasses = `animate-fade-in-up-subtle group overflow-hidden rounded-2xl border border-border transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-md ${
-              i === 0 ? "animation-delay-200" : ""
-            } ${i === 1 ? "animation-delay-400" : ""} ${
-              i === 2 ? "animation-delay-600" : ""
-            }`;
-
-            const cardContent = (
-              <>
+        <div className="grid gap-6 sm:grid-cols-2">
+          {projects.map((project, i) => (
+            <FadeIn key={project.title} delay={300 + i * 150}>
+              <Link
+                href={project.href}
+                className="group block h-full overflow-hidden rounded-xl transition-transform duration-200 hover:-translate-y-0.5"
+                style={{
+                  background: theme.cardBg,
+                  border: `1px solid ${theme.accent}15`,
+                  backdropFilter: "blur(8px)",
+                  textDecoration: "none",
+                }}
+              >
                 {project.image ? (
                   <div className="aspect-video w-full overflow-hidden">
                     <Image
@@ -78,35 +94,39 @@ export default function Tinkering() {
                   />
                 )}
                 <div className="p-5">
-                  <h2 className="font-serif text-xl text-foreground">
+                  <h2
+                    className="font-serif text-xl"
+                    style={{ color: theme.text }}
+                  >
                     {project.title}
                   </h2>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">
+                  <p
+                    className="mt-2 text-sm leading-relaxed"
+                    style={{ color: theme.muted }}
+                  >
                     {project.description}
                   </p>
-                  {project.href && (
-                    <span className="mt-3 inline-block text-xs font-semibold uppercase tracking-wider text-accent">
-                      Read more →
-                    </span>
-                  )}
+                  <div className="mt-3 flex flex-wrap gap-1.5">
+                    {project.tags.map((t) => (
+                      <span
+                        key={t}
+                        className="inline-block rounded-full px-2.5 py-0.5 font-sans text-[10px] font-semibold uppercase tracking-wider"
+                        style={{ background: "#f0ebe3", color: "#7a6e5e" }}
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                  <p
+                    className="mt-4 font-sans text-xs font-semibold uppercase tracking-wider"
+                    style={{ color: theme.linkAccent }}
+                  >
+                    Read more &rarr;
+                  </p>
                 </div>
-              </>
-            );
-
-            return project.href ? (
-              <Link
-                key={project.title}
-                href={project.href}
-                className={cardClasses}
-              >
-                {cardContent}
               </Link>
-            ) : (
-              <div key={project.title} className={cardClasses}>
-                {cardContent}
-              </div>
-            );
-          })}
+            </FadeIn>
+          ))}
         </div>
       </div>
     </section>

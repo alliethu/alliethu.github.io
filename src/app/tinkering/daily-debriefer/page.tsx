@@ -1,33 +1,39 @@
-import type { Metadata } from "next";
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-
-export const metadata: Metadata = {
-  title: "Daily Debriefer",
-  description:
-    "A private leadership journal with AI-powered synthesis, built with Next.js, Supabase, and the Anthropic API.",
-};
+import { useTheme } from "@/components/ThemeProvider";
 
 export default function DailyDebriefer() {
+  const theme = useTheme();
+
   return (
     <section className="px-6 py-12 md:py-20">
       <div className="mx-auto w-full max-w-3xl">
         <Link
           href="/tinkering"
-          className="animate-fade-in inline-block text-xs font-semibold uppercase tracking-[0.2em] text-muted"
+          className="animate-fade-in inline-block text-xs font-semibold uppercase tracking-[0.2em]"
+          style={{ color: theme.muted }}
         >
-          ← Back to My tinkering
+          &larr; Back to My tinkering
         </Link>
 
-        <h1 className="animate-fade-in-up mt-6 font-serif text-4xl leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl">
+        <h1
+          className="animate-fade-in-up mt-6 font-serif text-4xl leading-tight tracking-tight md:text-5xl lg:text-6xl"
+          style={{ color: theme.text }}
+        >
           Daily Debriefer
         </h1>
-        <p className="animate-fade-in-up animation-delay-200 mt-6 max-w-lg text-base leading-relaxed text-muted md:text-lg">
+        <p
+          className="animate-fade-in-up animation-delay-200 mt-6 max-w-lg text-base leading-relaxed md:text-lg"
+          style={{ color: theme.muted }}
+        >
           A personal leadership impact tracker built with AI, for people who
           move too fast to notice how much they&apos;re doing.
         </p>
 
-        <div className="animate-fade-in-up animation-delay-400 mt-10 overflow-hidden rounded-2xl border border-border">
+        <div className="animate-fade-in-up animation-delay-400 mt-10 overflow-hidden rounded-2xl"
+          style={{ border: `1px solid ${theme.accent}20` }}>
           <Image
             src="/daily-debriefer.png"
             alt="Screenshot of the Daily Debriefer dashboard"
@@ -39,10 +45,13 @@ export default function DailyDebriefer() {
 
         <div className="animate-fade-in-up animation-delay-400 mt-12 space-y-8">
           <div>
-            <h2 className="font-serif text-2xl text-foreground">
+            <h2 className="font-serif text-2xl" style={{ color: theme.text }}>
               The problem
             </h2>
-            <div className="mt-3 space-y-4 text-base leading-relaxed text-muted md:text-lg md:leading-relaxed">
+            <div
+              className="mt-3 space-y-4 text-base leading-relaxed md:text-lg md:leading-relaxed"
+              style={{ color: theme.muted }}
+            >
               <p>
                 Pulling together evidence of my own impact has always taken more
                 time than it should — not because the work isn&apos;t there, but
@@ -62,8 +71,13 @@ export default function DailyDebriefer() {
           </div>
 
           <div>
-            <h2 className="font-serif text-2xl text-foreground">The build</h2>
-            <p className="mt-3 text-base leading-relaxed text-muted md:text-lg md:leading-relaxed">
+            <h2 className="font-serif text-2xl" style={{ color: theme.text }}>
+              The build
+            </h2>
+            <p
+              className="mt-3 text-base leading-relaxed md:text-lg md:leading-relaxed"
+              style={{ color: theme.muted }}
+            >
               I built Daily Debriefer collaboratively with Claude — using it as
               both a co-designer and a feature inside the product itself. The
               prompt engineering process was as much a product design exercise as
@@ -72,10 +86,13 @@ export default function DailyDebriefer() {
           </div>
 
           <div>
-            <h2 className="font-serif text-2xl text-foreground">
+            <h2 className="font-serif text-2xl" style={{ color: theme.text }}>
               Iterating from real use
             </h2>
-            <div className="mt-3 space-y-4 text-base leading-relaxed text-muted md:text-lg md:leading-relaxed">
+            <div
+              className="mt-3 space-y-4 text-base leading-relaxed md:text-lg md:leading-relaxed"
+              style={{ color: theme.muted }}
+            >
               <p>
                 After the first week I started hitting real friction and
                 responding to it:
@@ -96,10 +113,13 @@ export default function DailyDebriefer() {
           </div>
 
           <div>
-            <h2 className="font-serif text-2xl text-foreground">
+            <h2 className="font-serif text-2xl" style={{ color: theme.text }}>
               What it actually felt like
             </h2>
-            <p className="mt-3 text-base leading-relaxed text-muted md:text-lg md:leading-relaxed">
+            <p
+              className="mt-3 text-base leading-relaxed md:text-lg md:leading-relaxed"
+              style={{ color: theme.muted }}
+            >
               After a full week of consistent use, reading the AI-generated
               end-of-week synthesis — wins, patterns, tensions, one thing to
               carry forward — was extremely gratifying. It helped me sit back and
@@ -111,10 +131,13 @@ export default function DailyDebriefer() {
           </div>
 
           <div>
-            <h2 className="font-serif text-2xl text-foreground">
+            <h2 className="font-serif text-2xl" style={{ color: theme.text }}>
               Why it matters beyond the app
             </h2>
-            <p className="mt-3 text-base leading-relaxed text-muted md:text-lg md:leading-relaxed">
+            <p
+              className="mt-3 text-base leading-relaxed md:text-lg md:leading-relaxed"
+              style={{ color: theme.muted }}
+            >
               This is a working demonstration of how I think about product:
               start with a real user need, build minimum viable, use it in
               production, and iterate on observed behavior — not assumptions.
@@ -122,7 +145,9 @@ export default function DailyDebriefer() {
           </div>
 
           <div>
-            <h2 className="font-serif text-2xl text-foreground">Built with</h2>
+            <h2 className="font-serif text-2xl" style={{ color: theme.text }}>
+              Built with
+            </h2>
             <ul className="mt-3 flex flex-wrap gap-2">
               {[
                 "Next.js",
@@ -133,7 +158,11 @@ export default function DailyDebriefer() {
               ].map((tech) => (
                 <li
                   key={tech}
-                  className="rounded-full border border-border px-3 py-1 text-sm text-muted"
+                  className="rounded-full px-3 py-1 text-sm"
+                  style={{
+                    border: `1px solid ${theme.accent}30`,
+                    color: theme.muted,
+                  }}
                 >
                   {tech}
                 </li>
@@ -146,9 +175,13 @@ export default function DailyDebriefer() {
               href="https://github.com/alliethu/daily-debriefer"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex rounded-full border border-foreground px-6 py-3 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
+              className="pill-btn"
+              style={{
+                color: theme.linkAccent,
+                borderColor: theme.lineColor,
+              }}
             >
-              View on GitHub →
+              View on GitHub &rarr;
             </a>
           </div>
         </div>

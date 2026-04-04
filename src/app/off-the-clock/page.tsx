@@ -3,8 +3,34 @@
 import { useTheme } from "@/components/ThemeProvider";
 import { FadeIn } from "@/components/FadeIn";
 import Bookshelf from "@/components/widgets/Bookshelf";
-import MovementWidget from "@/components/widgets/MovementWidget";
-import AdventureLog from "@/components/widgets/AdventureLog";
+import BingeWidget from "@/components/widgets/BingeWidget";
+
+const CURRENTLY = [
+  {
+    label: "Moving",
+    emoji: "💪",
+    value: "Rebecca Kennedy's HILIT training plan on Peloton",
+    detail: "Fave instructors: Rebecca Kennedy, Jess King, Kirra Michel, Tunde Oyeneyin",
+  },
+  {
+    label: "Exploring",
+    emoji: "🗺️",
+    value: "Weekend hikes and bike rides with the fam",
+    detail: "Currently on a pump track kick — the little one is fearless",
+  },
+  {
+    label: "Energized by",
+    emoji: "✨",
+    value: "Building things with AI after bedtime",
+    detail: "This site, a leadership journal, and games for my kid",
+  },
+  {
+    label: "Bringing me joy",
+    emoji: "🎧",
+    value: "The Good Hang with Amy Poehler",
+    detail: "Funny, warm, and exactly the vibe I need at the end of the day",
+  },
+];
 
 export default function OffTheClock() {
   const theme = useTheme();
@@ -14,110 +40,119 @@ export default function OffTheClock() {
       <div className="mx-auto w-full max-w-3xl">
         <FadeIn delay={100}>
           <p
-            className="text-xs font-semibold uppercase tracking-[0.15em]"
+            className="text-xs font-semibold uppercase tracking-[0.2em]"
             style={{ color: theme.muted, marginBottom: 12 }}
           >
             Off the clock
           </p>
           <h1
-            className="font-serif text-4xl leading-tight tracking-tight md:text-5xl"
+            className="font-serif text-4xl leading-tight tracking-tight md:text-5xl lg:text-6xl"
             style={{ color: theme.text, margin: "0 0 12px 0" }}
           >
-            The stuff that keeps me{" "}
-            <em style={{ color: theme.accent }}>going.</em>
+            What I&apos;m into{" "}
+            <em style={{ color: theme.accent }}>right now.</em>
           </h1>
           <p
-            className="font-sans text-base leading-relaxed"
+            className="font-sans text-base leading-relaxed md:text-lg"
             style={{
               color: theme.muted,
               maxWidth: 560,
-              lineHeight: 1.7,
               marginBottom: 56,
             }}
           >
-            Trails, barbells, books, and chasing the next adventure with my
-            little family. This page is always changing.
+            The stuff that fills my cup outside of work. This page is always
+            changing.
           </p>
         </FadeIn>
 
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
+        {/* Currently list */}
+        <FadeIn delay={250}>
+          <div className="mb-4 grid grid-cols-1 gap-4 md:grid-cols-2">
+            {CURRENTLY.map((item, i) => (
+              <div
+                key={i}
+                className="card-glow rounded-xl p-5"
+                style={{
+                  background: theme.cardBg,
+                  border: `1px solid ${theme.accent}15`,
+                  "--glow-bg": theme.ambientGlow,
+                } as React.CSSProperties}
+              >
+                <p
+                  className="m-0 text-xs font-semibold uppercase tracking-[0.2em]"
+                  style={{ color: theme.accent }}
+                >
+                  {item.emoji} Currently {item.label.toLowerCase()}
+                </p>
+                <p
+                  className="mt-1.5 font-serif text-lg"
+                  style={{ color: theme.text, margin: "6px 0 0 0" }}
+                >
+                  {item.value}
+                </p>
+                <p
+                  className="font-sans text-sm"
+                  style={{ color: theme.muted, margin: "4px 0 0 0" }}
+                >
+                  {item.detail}
+                </p>
+              </div>
+            ))}
+          </div>
+        </FadeIn>
+
+        {/* Visual cards */}
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {/* Bookshelf */}
           <FadeIn
-            delay={300}
+            delay={400}
+            className="card-glow rounded-xl p-5"
             style={{
               background: theme.cardBg,
-              borderRadius: 16,
-              padding: 28,
               border: `1px solid ${theme.accent}15`,
-            }}
+              "--glow-bg": theme.ambientGlow,
+            } as React.CSSProperties}
           >
             <p
-              className="text-xs font-semibold uppercase tracking-[0.15em]"
+              className="text-xs font-semibold uppercase tracking-[0.2em]"
               style={{ color: theme.muted, marginBottom: 12 }}
             >
-              📚 Evening reads
+              📚 Currently reading
             </p>
             <p
               className="font-serif text-xl"
               style={{ color: theme.text, margin: "0 0 20px 0" }}
             >
-              winding down with{" "}
-              <em style={{ color: theme.accent }}>young adult fiction.</em>
+              no shame in my{" "}
+              <em style={{ color: theme.accent }}>reading game.</em>
             </p>
             <Bookshelf />
           </FadeIn>
 
-          {/* Movement */}
+          {/* Binge shows */}
           <FadeIn
-            delay={450}
+            delay={550}
+            className="card-glow rounded-xl p-5"
             style={{
               background: theme.cardBg,
-              borderRadius: 16,
-              padding: 28,
               border: `1px solid ${theme.accent}15`,
-            }}
+              "--glow-bg": theme.ambientGlow,
+            } as React.CSSProperties}
           >
             <p
-              className="text-xs font-semibold uppercase tracking-[0.15em]"
+              className="text-xs font-semibold uppercase tracking-[0.2em]"
               style={{ color: theme.muted, marginBottom: 12 }}
             >
-              💪 Movement today
+              📺 Currently bingeing
             </p>
             <p
               className="font-serif text-xl"
               style={{ color: theme.text, margin: "0 0 20px 0" }}
             >
-              moving my body keeps me{" "}
-              <em style={{ color: theme.accent }}>grounded.</em>
+              Bravo & reality TV are{" "}
+              <em style={{ color: theme.accent }}>self-care.</em>
             </p>
-            <MovementWidget />
-          </FadeIn>
-
-          {/* Adventures — full width */}
-          <FadeIn
-            delay={600}
-            className="md:col-span-2"
-            style={{
-              background: theme.cardBg,
-              borderRadius: 16,
-              padding: 28,
-              border: `1px solid ${theme.accent}15`,
-            }}
-          >
-            <p
-              className="text-xs font-semibold uppercase tracking-[0.15em]"
-              style={{ color: theme.muted, marginBottom: 12 }}
-            >
-              🗺️ Adventure log
-            </p>
-            <p
-              className="font-serif text-xl"
-              style={{ color: theme.text, margin: "0 0 20px 0" }}
-            >
-              hiking, biking &amp; exploring{" "}
-              <em style={{ color: theme.accent }}>with the fam.</em>
-            </p>
-            <AdventureLog />
+            <BingeWidget />
           </FadeIn>
         </div>
       </div>

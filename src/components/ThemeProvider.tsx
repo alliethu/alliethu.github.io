@@ -28,24 +28,24 @@ export interface Theme {
 const THEMES: Record<string, Omit<Theme, "time">> = {
   morning: {
     key: "morning",
-    bg: "linear-gradient(165deg, #fdf0e2 0%, #f7e4d0 40%, #f0dcc8 100%)",
-    text: "#2a1f14",
-    muted: "#7a6450",
-    accent: "#b47430",
-    linkAccent: "#905d22",
-    lineColor: "rgba(180, 116, 48, 0.3)",
+    bg: "linear-gradient(165deg, #faeee6 0%, #f4e2d4 40%, #eedace 100%)",
+    text: "#2a1c14",
+    muted: "#6b5444",
+    accent: "#b87530",
+    linkAccent: "#9a6228",
+    lineColor: "rgba(184, 117, 48, 0.25)",
     textGlow:
-      "0 0 40px rgba(180, 116, 48, 0.3), 0 0 80px rgba(180, 116, 48, 0.1)",
-    cardBg: "rgba(255,255,255,0.55)",
-    navBorder: "linear-gradient(to right, #b47430, transparent)",
+      "0 0 40px rgba(184, 117, 48, 0.25), 0 0 80px rgba(184, 117, 48, 0.08)",
+    cardBg: "rgba(255,255,255,0.45)",
+    navBorder: "linear-gradient(to right, #b87530, transparent)",
     ambientGlow:
-      "radial-gradient(ellipse 80% 45% at 50% 105%, rgba(245, 180, 80, 0.28) 0%, rgba(240, 150, 60, 0.1) 40%, transparent 70%)",
+      "radial-gradient(ellipse 80% 50% at 50% 105%, rgba(230, 160, 90, 0.25) 0%, rgba(220, 130, 80, 0.1) 40%, transparent 70%)",
   },
   afternoon: {
     key: "afternoon",
     bg: "linear-gradient(165deg, #f5f0ea 0%, #f0e8dc 40%, #ebe3d5 100%)",
     text: "#1a1a1a",
-    muted: "#6b6b6b",
+    muted: "#5a5347",
     accent: "#a67c08",
     linkAccent: "#845f08",
     lineColor: "rgba(166, 124, 8, 0.25)",
@@ -58,24 +58,24 @@ const THEMES: Record<string, Omit<Theme, "time">> = {
   },
   evening: {
     key: "evening",
-    bg: "linear-gradient(165deg, #f0e4e0 0%, #e8d5cf 40%, #ddc8c0 100%)",
-    text: "#2a1a1a",
-    muted: "#7a5f5f",
-    accent: "#9c5e50",
-    linkAccent: "#844a3c",
-    lineColor: "rgba(156, 94, 80, 0.3)",
+    bg: "linear-gradient(165deg, #eee4ea 0%, #e2d2de 40%, #d6c4d0 100%)",
+    text: "#261a24",
+    muted: "#6a4e62",
+    accent: "#8e5878",
+    linkAccent: "#7a4868",
+    lineColor: "rgba(142, 88, 120, 0.28)",
     textGlow:
-      "0 0 40px rgba(156, 94, 80, 0.3), 0 0 80px rgba(156, 94, 80, 0.1)",
-    cardBg: "rgba(255,255,255,0.45)",
-    navBorder: "linear-gradient(to right, #9c5e50, transparent)",
+      "0 0 40px rgba(142, 88, 120, 0.28), 0 0 80px rgba(142, 88, 120, 0.1)",
+    cardBg: "rgba(255,255,255,0.42)",
+    navBorder: "linear-gradient(to right, #8e5878, transparent)",
     ambientGlow:
-      "radial-gradient(ellipse 90% 40% at 50% 105%, rgba(220, 130, 80, 0.22) 0%, rgba(200, 100, 80, 0.08) 45%, transparent 70%)",
+      "radial-gradient(ellipse 90% 40% at 50% 105%, rgba(180, 120, 160, 0.22) 0%, rgba(160, 100, 140, 0.08) 45%, transparent 70%)",
   },
   night: {
     key: "night",
     bg: "linear-gradient(165deg, #1e1a18 0%, #252018 40%, #1a1810 100%)",
     text: "#e8e0d8",
-    muted: "#a09080",
+    muted: "#b8a898",
     accent: "#d4a574",
     linkAccent: "#d4a574",
     lineColor: "rgba(212, 165, 116, 0.25)",
@@ -97,18 +97,34 @@ function getThemeForHour(h: number) {
 
 // ─── Context ────────────────────────────────────────────────────────────────
 
-const ThemeContext = createContext<Theme | null>(null);
+const THEME_KEYS: Theme["key"][] = ["morning", "afternoon", "evening", "night"];
+
+interface ThemeContextValue {
+  theme: Theme;
+  override: Theme["key"] | null;
+  setOverride: (key: Theme["key"] | null) => void;
+  themeKeys: Theme["key"][];
+}
+
+const ThemeContext = createContext<ThemeContextValue | null>(null);
 
 export function useTheme(): Theme {
   const ctx = useContext(ThemeContext);
   if (!ctx) throw new Error("useTheme must be used within <ThemeProvider>");
-  return ctx;
+  return ctx.theme;
+}
+
+export function useThemeSwitcher() {
+  const ctx = useContext(ThemeContext);
+  if (!ctx) throw new Error("useThemeSwitcher must be used within <ThemeProvider>");
+  return { override: ctx.override, setOverride: ctx.setOverride, themeKeys: ctx.themeKeys, currentKey: ctx.theme.key };
 }
 
 // ─── Provider ───────────────────────────────────────────────────────────────
 
 export default function ThemeProvider({ children }: { children: ReactNode }) {
   const [now, setNow] = useState<Date | null>(null);
+  const [override, setOverride] = useState<Theme["key"] | null>(null);
 
   useEffect(() => {
     setNow(new Date());
@@ -117,7 +133,8 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
   }, []);
 
   // Default to afternoon theme for SSR, hydrate with real time on client
-  const base = now ? getThemeForHour(now.getHours()) : THEMES.afternoon;
+  const autoBase = now ? getThemeForHour(now.getHours()) : THEMES.afternoon;
+  const base = override ? THEMES[override] : autoBase;
   const time = now
     ? now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
     : "";
@@ -140,6 +157,8 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
   }, [theme, now]);
 
   return (
-    <ThemeContext.Provider value={theme}>{children}</ThemeContext.Provider>
+    <ThemeContext.Provider value={{ theme, override, setOverride, themeKeys: THEME_KEYS }}>
+      {children}
+    </ThemeContext.Provider>
   );
 }

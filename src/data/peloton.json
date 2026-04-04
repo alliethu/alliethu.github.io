@@ -1,0 +1,27 @@
+{
+  "fetchedAt": "2026-04-04T00:00:00.000Z",
+  "totalWorkouts": 342,
+  "recentWorkouts": [
+    { "id": "1", "type": "cycling", "title": "30 min HIIT & Hills Ride", "instructorId": "a", "duration": 30, "date": "2026-04-03", "calories": 380, "totalOutput": 290000 },
+    { "id": "2", "type": "strength", "title": "20 min Full Body Strength", "instructorId": "b", "duration": 20, "date": "2026-04-02", "calories": 180, "totalOutput": null },
+    { "id": "3", "type": "cycling", "title": "45 min Power Zone Ride", "instructorId": "c", "duration": 45, "date": "2026-04-01", "calories": 520, "totalOutput": 480000 },
+    { "id": "4", "type": "yoga", "title": "20 min Evening Flow", "instructorId": "d", "duration": 20, "date": "2026-03-31", "calories": 95, "totalOutput": null },
+    { "id": "5", "type": "cycling", "title": "20 min Low Impact Ride", "instructorId": "a", "duration": 20, "date": "2026-03-30", "calories": 210, "totalOutput": 180000 },
+    { "id": "6", "type": "strength", "title": "15 min Arms & Shoulders", "instructorId": "e", "duration": 15, "date": "2026-03-29", "calories": 120, "totalOutput": null },
+    { "id": "7", "type": "cycling", "title": "30 min Pop Ride", "instructorId": "a", "duration": 30, "date": "2026-03-28", "calories": 350, "totalOutput": 260000 },
+    { "id": "8", "type": "stretching", "title": "10 min Post-Ride Stretch", "instructorId": "d", "duration": 10, "date": "2026-03-28", "calories": 30, "totalOutput": null }
+  ],
+  "favoriteInstructors": [
+    { "name": "Alex Toussaint", "count": 5, "image": null },
+    { "name": "Robin Arzón", "count": 4, "image": null },
+    { "name": "Matt Wilpers", "count": 3, "image": null },
+    { "name": "Aditi Shah", "count": 2, "image": null },
+    { "name": "Adrian Williams", "count": 1, "image": null }
+  ],
+  "workoutTypes": {
+    "cycling": 4,
+    "strength": 2,
+    "yoga": 1,
+    "stretching": 1
+  }
+}

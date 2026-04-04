@@ -8,9 +8,9 @@ import { FadeIn } from "@/components/FadeIn";
 
 const NAV_LINKS = [
   { href: "/about", label: "About me" },
-  { href: "/off-the-clock", label: "Off the clock" },
   { href: "/always-learning", label: "Always learning" },
   { href: "/tinkering", label: "My tinkering" },
+  { href: "/off-the-clock", label: "Off the clock" },
 ];
 
 export default function Home() {
@@ -19,17 +19,8 @@ export default function Home() {
 
   return (
     <section
-      className="relative flex min-h-[80vh] flex-col items-center justify-center overflow-hidden px-6"
+      className="relative flex min-h-[80vh] flex-col items-center justify-center overflow-hidden px-6 py-12 md:py-6"
     >
-      {/* ── Ambient sky glow ── */}
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background: theme.ambientGlow,
-          transition: "background 1.5s ease",
-        }}
-      />
-
       {/* ── Act 1: The Greeting ── */}
       <div
         className="flex flex-col items-center text-center"
@@ -44,12 +35,12 @@ export default function Home() {
         }}
       >
         {/* Time — the hero */}
-        <FadeIn delay={300}>
+        <FadeIn delay={100}>
           <h1
             className="font-serif"
             style={{
               fontSize: "clamp(3rem, 8vw, 4.5rem)",
-              fontWeight: 300,
+              fontWeight: 400,
               lineHeight: 1,
               margin: 0,
               color: theme.text,
@@ -62,7 +53,7 @@ export default function Home() {
         </FadeIn>
 
         {/* "where I am" — small caps label */}
-        <FadeIn delay={600}>
+        <FadeIn delay={250}>
           <p
             className="font-sans"
             style={{
@@ -79,7 +70,7 @@ export default function Home() {
         </FadeIn>
 
         {/* Decorative line */}
-        <FadeIn delay={900}>
+        <FadeIn delay={400}>
           <div
             style={{
               width: 48,
@@ -91,7 +82,7 @@ export default function Home() {
         </FadeIn>
 
         {/* Warm message */}
-        <FadeIn delay={1100}>
+        <FadeIn delay={550}>
           <p
             className="font-serif italic"
             style={{
@@ -107,7 +98,7 @@ export default function Home() {
         </FadeIn>
 
         {/* "Come on in" CTA */}
-        <FadeIn delay={1500} style={{ marginTop: 40 }}>
+        <FadeIn delay={700} style={{ marginTop: 40 }}>
           <button
             onClick={() => setEntered(true)}
             className="pill-btn"
@@ -182,8 +173,8 @@ export default function Home() {
             }}
           >
             Currently at GitHub. I lead design teams by day, chase my kid up
-            mountains on weekends, and end every night with a YA novel I probably
-            shouldn&apos;t love this much.
+            mountains on weekends, and recharge with fiction, fresh air, and way
+            too much reality TV.
           </p>
 
           <div className="mt-9 flex flex-wrap gap-2.5">

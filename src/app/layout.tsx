@@ -4,6 +4,8 @@ import { Playfair_Display, DM_Sans } from "next/font/google";
 import ThemeProvider from "@/components/ThemeProvider";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageTransition from "@/components/PageTransition";
+import AmbientGlow from "@/components/AmbientGlow";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -58,8 +60,11 @@ export default function RootLayout({
         className={`${dmSans.variable} ${geistMono.variable} ${dmSerif.variable} flex min-h-screen flex-col antialiased`}
       >
         <ThemeProvider>
+          <AmbientGlow />
           <Header />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1">
+            <PageTransition>{children}</PageTransition>
+          </main>
           <Footer />
         </ThemeProvider>
       </body>

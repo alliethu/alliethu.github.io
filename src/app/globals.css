@@ -4,7 +4,7 @@
 :root {
   --background: #f5f0ea;
   --foreground: #1a1a1a;
-  --muted: #6b6b6b;
+  --muted: #5a5347;
   --accent: #a67c08;
   --link-accent: #845f08;
   --line-color: rgba(166, 124, 8, 0.25);
@@ -140,6 +140,43 @@ a {
 
 .pill-btn:hover {
   background: var(--line-color);
+}
+
+/* ─── Nav link hover ─────────────────────────────────────────────────────── */
+
+.nav-link {
+  transition: color 0.3s ease, text-decoration-color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--nav-hover-color) !important;
+}
+
+/* ─── Card ambient glow on hover ─────────────────────────────────────────── */
+
+.card-glow {
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.4s ease;
+}
+
+.card-glow::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  background: var(--glow-bg);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  filter: blur(20px);
+}
+
+.card-glow:hover {
+  border-color: var(--accent) !important;
+}
+
+.card-glow:hover::before {
+  opacity: 1;
 }
 
 /* ─── Animated nav line ─────────────────────────────────────────────────── */

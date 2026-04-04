@@ -1,0 +1,77 @@
+{
+  "fetchedAt": "2026-04-04T22:49:11.999Z",
+  "books": [
+    {
+      "title": "A Court of Wings and Ruin",
+      "author": "Sarah J. Maas",
+      "coverUrl": "https://covers.openlibrary.org/b/id/8506724-M.jpg",
+      "coverUrlLarge": "https://covers.openlibrary.org/b/id/8506724-L.jpg",
+      "openLibraryKey": "/works/OL17823218W",
+      "year": 2017
+    },
+    {
+      "title": "A Court of Mist and Fury",
+      "author": "Sarah J. Maas",
+      "coverUrl": "https://covers.openlibrary.org/b/id/14315081-M.jpg",
+      "coverUrlLarge": "https://covers.openlibrary.org/b/id/14315081-L.jpg",
+      "openLibraryKey": "/works/OL17860744W",
+      "year": 2014
+    },
+    {
+      "title": "A Court of Thorns and Roses",
+      "author": "Sarah J. Maas",
+      "coverUrl": "https://covers.openlibrary.org/b/id/8738585-M.jpg",
+      "coverUrlLarge": "https://covers.openlibrary.org/b/id/8738585-L.jpg",
+      "openLibraryKey": "/works/OL17352669W",
+      "year": 2013
+    },
+    {
+      "title": "Matched",
+      "author": "Ally Condie",
+      "coverUrl": "https://covers.openlibrary.org/b/id/6670784-M.jpg",
+      "coverUrlLarge": "https://covers.openlibrary.org/b/id/6670784-L.jpg",
+      "openLibraryKey": "/works/OL15493120W",
+      "year": 2010
+    },
+    {
+      "title": "A Novel..Funny Story",
+      "author": "Emily Henry",
+      "coverUrl": "https://covers.openlibrary.org/b/id/14625690-M.jpg",
+      "coverUrlLarge": "https://covers.openlibrary.org/b/id/14625690-L.jpg",
+      "openLibraryKey": "/works/OL37575890W",
+      "year": 2024
+    },
+    {
+      "title": "Blood Circus",
+      "author": "Camila Victoire",
+      "coverUrl": "https://covers.openlibrary.org/b/id/13348536-M.jpg",
+      "coverUrlLarge": "https://covers.openlibrary.org/b/id/13348536-L.jpg",
+      "openLibraryKey": "/works/OL28721362W",
+      "year": 2023
+    },
+    {
+      "title": "The Love That Split the World",
+      "author": "Emily Henry",
+      "coverUrl": "https://covers.openlibrary.org/b/id/9372603-M.jpg",
+      "coverUrlLarge": "https://covers.openlibrary.org/b/id/9372603-L.jpg",
+      "openLibraryKey": "/works/OL20020367W",
+      "year": 2016
+    },
+    {
+      "title": "Great Big Beautiful Life",
+      "author": "Emily Henry",
+      "coverUrl": "https://covers.openlibrary.org/b/id/15149787-M.jpg",
+      "coverUrlLarge": "https://covers.openlibrary.org/b/id/15149787-L.jpg",
+      "openLibraryKey": "/works/OL42394587W",
+      "year": 2025
+    },
+    {
+      "title": "Sweet Reckoning",
+      "author": "Wendy Higgins",
+      "coverUrl": "https://covers.openlibrary.org/b/id/11106096-M.jpg",
+      "coverUrlLarge": "https://covers.openlibrary.org/b/id/11106096-L.jpg",
+      "openLibraryKey": "/works/OL24489729W",
+      "year": 2014
+    }
+  ]
+}

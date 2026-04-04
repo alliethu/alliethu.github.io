@@ -10,7 +10,7 @@ export default function Connect() {
   return (
     <section className="flex flex-1 flex-col justify-center px-6 py-12 md:py-20">
       <div className="mx-auto w-full max-w-3xl">
-        <h1 className="animate-fade-in-up font-serif text-4xl leading-snug tracking-tight text-foreground md:text-5xl lg:text-6xl">
+        <h1 className="animate-fade-in-up font-serif text-4xl leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl">
           Always up for a meaningful{" "}
           <br />
           <em className="text-accent">conversation.</em>

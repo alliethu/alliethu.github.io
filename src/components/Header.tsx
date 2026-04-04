@@ -7,9 +7,9 @@ import { useTheme } from "@/components/ThemeProvider";
 
 const links = [
   { href: "/about", label: "About me" },
-  { href: "/off-the-clock", label: "Off the clock" },
   { href: "/always-learning", label: "Always learning" },
   { href: "/tinkering", label: "My tinkering" },
+  { href: "/off-the-clock", label: "Off the clock" },
 ];
 
 export default function Header() {
@@ -51,14 +51,14 @@ export default function Header() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-sm tracking-wide transition-opacity hover:opacity-60"
+                  className="nav-link text-sm tracking-wide"
                   style={{
                     color: active ? theme.text : theme.muted,
-                    fontWeight: active ? 600 : 400,
-                    textDecoration: active ? "underline" : "none",
+                    textDecoration: "underline",
                     textUnderlineOffset: "6px",
-                    textDecorationColor: theme.accent,
-                  }}
+                    textDecorationColor: active ? theme.accent : "transparent",
+                    "--nav-hover-color": theme.text,
+                  } as React.CSSProperties}
                 >
                   {link.label}
                 </Link>
@@ -99,12 +99,10 @@ export default function Header() {
       </nav>
 
       {/* Animated line */}
-      <div className="mx-auto max-w-5xl px-6 md:px-12">
-        <div
-          className={`nav-line ${lineExpanded ? "expanded" : ""}`}
-          style={{ background: theme.navBorder }}
-        />
-      </div>
+      <div
+        className={`nav-line ${lineExpanded ? "expanded" : ""}`}
+        style={{ background: theme.navBorder }}
+      />
 
       {/* Mobile nav */}
       {menuOpen && (
@@ -123,7 +121,6 @@ export default function Header() {
                     className="text-sm tracking-wide"
                     style={{
                       color: active ? theme.text : theme.muted,
-                      fontWeight: active ? 600 : 400,
                       textDecoration: active ? "underline" : "none",
                       textUnderlineOffset: "6px",
                       textDecorationColor: theme.accent,

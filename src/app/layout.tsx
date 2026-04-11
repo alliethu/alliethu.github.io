@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist_Mono } from "next/font/google";
 import { Playfair_Display, DM_Sans } from "next/font/google";
 import ThemeProvider from "@/components/ThemeProvider";
@@ -67,6 +68,11 @@ export default function RootLayout({
           </main>
           <Footer />
         </ThemeProvider>
+        <Script
+          data-goatcounter="https://alliethu.goatcounter.com/count"
+          src="//gc.zgo.at/count.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

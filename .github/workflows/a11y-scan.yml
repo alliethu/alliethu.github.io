@@ -10,10 +10,10 @@ jobs:
       - uses: github/accessibility-scanner@v2
         with:
           urls: |
-            https://alliethu.github.io
-            https://alliethu.github.io/about
-            https://alliethu.github.io/connect
-            https://alliethu.github.io/tinkering
+            https://alliethu.com
+            https://alliethu.com/about
+            https://alliethu.com/connect
+            https://alliethu.com/tinkering
           repository: alliethu/alliethu.github.io
           token: ${{ secrets.GH_TOKEN }}
-          cache_key: cached_results-alliethu.github.io.json
+          cache_key: cached_results-alliethu.com.json

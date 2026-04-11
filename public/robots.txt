@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://alliethu.github.io/sitemap.xml
+Sitemap: https://alliethu.com/sitemap.xml

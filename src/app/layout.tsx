@@ -32,12 +32,12 @@ export const metadata: Metadata = {
   },
   description:
     "Design leader who builds systems, frameworks, and cross-functional partnerships that create lasting change.",
-  metadataBase: new URL("https://alliethu.github.io"),
+  metadataBase: new URL("https://alliethu.com"),
   openGraph: {
     title: "Allie Thu — Design Leader & Systems Thinker",
     description:
       "Design leader who builds systems, frameworks, and cross-functional partnerships that create lasting change.",
-    url: "https://alliethu.github.io",
+    url: "https://alliethu.com",
     siteName: "Allie Thu",
     locale: "en_US",
     type: "website",

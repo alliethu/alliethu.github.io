@@ -35,7 +35,7 @@ const PODCASTS = [
 ];
 
 const SUBSTACKS = [
-  { name: "Hilary Gridley", newsletter: "Writer Builder", url: "https://hilary.substack.com/" },
+  { name: "Hilary Gridley", newsletter: "Writer Builder", url: "https://hils.substack.com/" },
   { name: "John Cutler", newsletter: "The Beautiful Mess", url: "https://cutlefish.substack.com/" },
   { name: "Wes Kao", newsletter: "Wes Kao's Newsletter", url: "https://weskao.substack.com/" },
   { name: "MC Dean", newsletter: "MC Dean Percolates", url: "https://substack.com/@marieclairedean" },

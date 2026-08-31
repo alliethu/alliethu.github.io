@@ -43,13 +43,13 @@ export default function TinyTimesGames() {
               <p>
                 My son is almost seven, and he loves games. He&apos;d watch my
                 husband and me play NYT Wordle, the Mini Crossword, Spelling
-                Bee — and he wanted in. Not to be babysat with a tablet, but to
+                Bee, and he wanted in. Not to be babysat with a tablet, but to
                 actually play. To do what we were doing.
               </p>
               <p>
                 The problem was the vocabulary. The words were too hard, the
                 clues assumed too much, and he&apos;d hit a wall fast. He&apos;d
-                get frustrated — not with the game, but with himself. He&apos;d
+                get frustrated, not with the game, but with himself. He&apos;d
                 need to ask for help, and that bothered him, because he could see
                 that we didn&apos;t need help. He wanted to be capable, not just
                 included.
@@ -67,16 +67,16 @@ export default function TinyTimesGames() {
               style={{ color: theme.muted }}
             >
               <p>
-                I work in accessibility design, and the thing I keep coming back
-                to is that accessibility is really about inclusion — making sure
-                people can participate in the things that matter to them. The
+                Accessibility is a core part of my work, and I keep coming back
+                to a simple idea: it is really about inclusion. People should be
+                able to participate in the things that matter to them. The
                 barrier can be technological, physical, or cognitive. In my
                 son&apos;s case, his brain is just not at the same developmental
                 stage as mine and my husband&apos;s. That&apos;s not a flaw.
                 That&apos;s just where he is. And he still deserves to play.
               </p>
               <p>
-                Tiny Times Games is my attempt to remove that barrier — same joy,
+                Tiny Times Games is my attempt to remove that barrier. Same joy,
                 same daily ritual, same sense of accomplishment. Just scaled to
                 actually fit him.
               </p>
@@ -92,17 +92,16 @@ export default function TinyTimesGames() {
               style={{ color: theme.muted }}
             >
               <p>
-                I built it in React using GitHub Copilot CLI — a similar
-                collaborative vibe to how I built Daily Debriefer with Claude,
-                just a different tool. The suite includes kid-friendly versions
-                of Wordle, the Mini Crossword, Spelling Bee, and a trivia game,
-                because he&apos;s obsessed with facts and we sometimes play
-                trivia separately anyway. Every game uses age-appropriate
-                vocabulary. The goal is that he can sit down and play it on his
-                own.
+                I built it in React using GitHub Copilot CLI, with a similar
+                collaborative rhythm to how I built Daily Debriefer. The suite
+                includes kid-friendly versions of Wordle, the Mini Crossword,
+                Spelling Bee, and a trivia game, because he&apos;s obsessed with
+                facts and we sometimes play trivia separately anyway. Every game
+                uses age-appropriate vocabulary. The goal is that he can sit down
+                and play it on his own.
               </p>
               <p>
-                It&apos;ll live on his iPad as a PWA — no App Store required.
+                It&apos;ll live on his iPad as a PWA. No App Store required.
                 He&apos;ll tap an icon on his home screen just like any other
                 app.
               </p>

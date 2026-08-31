@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Connect",
   description:
-    "Get in touch with Allie Thu — let's talk design, swap ideas, or explore working together.",
+    "Connect with Allie Thu to talk about design systems, accessibility, AI, and building better products across teams.",
 };
 
 export default function Connect() {
@@ -24,8 +24,9 @@ export default function Connect() {
             Let&apos;s connect.
           </h2>
           <p className="mt-5 max-w-md text-base leading-relaxed text-muted md:text-lg">
-            Whether you want to talk design, swap ideas, or explore working
-            together — I&apos;d love to hear from you.
+            Whether you want to talk design systems, accessibility, AI, or what
+            it takes to build better products across teams, I&apos;d love to hear
+            from you.
           </p>
         </div>
 

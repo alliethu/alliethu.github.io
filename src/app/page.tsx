@@ -156,10 +156,9 @@ export default function Home() {
               color: theme.text,
             }}
           >
-            I&apos;m Allie — a design leader, builder, and systems thinker with
-            15+ years in tech. This is{" "}
+            I&apos;m Allie, a design leader and builder focused on the{" "}
             <em style={{ color: theme.accent, fontStyle: "italic" }}>
-              my corner of the internet.
+              systems behind great products.
             </em>
           </h2>
 
@@ -172,8 +171,10 @@ export default function Home() {
               marginTop: 24,
             }}
           >
-            Currently at GitHub. I lead design teams by day, chase my kid up
-            mountains on weekends, and recharge with fiction, fresh air, and way
+            At GitHub, I lead Core UX Design, a multidisciplinary team of
+            designers and design engineers working across design systems and
+            accessibility. Outside work, I make the most of my days with fresh
+            air, family adventures, getting lost in a good story, and probably
             too much reality TV.
           </p>
 

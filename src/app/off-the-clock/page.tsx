@@ -16,7 +16,7 @@ const CURRENTLY = [
     label: "Exploring",
     emoji: "🗺️",
     value: "Weekend hikes and bike rides with the fam",
-    detail: "Currently on a pump track kick — the little one is fearless",
+    detail: "Currently on a pump track kick. The little one is fearless",
   },
   {
     label: "Energized by",

@@ -12,21 +12,21 @@ const projects = [
   {
     title: "Daily Debriefer",
     description:
-      "A private leadership journal with AI-powered synthesis. Captures daily reflections — wins, tensions, energy levels, and relationship dynamics — then uses Claude to surface patterns and generate 1:1 prep and quarterly narratives. Built with Next.js, Supabase, and the Anthropic API.",
+      "A private leadership journal I built to turn daily reflection into useful patterns. It captures wins, tensions, energy, and relationship dynamics, then uses AI to support 1:1 preparation and longer-term reflection. Built with Next.js, Supabase, and the Anthropic API.",
     image: "/daily-debriefer.png",
     href: "/tinkering/daily-debriefer",
   },
   {
     title: "Tiny Times Games",
     description:
-      "A suite of age-appropriate word, puzzle, and trivia games built for a kid who just wants to play alongside the grown-ups. Kid-friendly versions of Wordle, the Mini Crossword, Spelling Bee, and trivia — built with React and shipping as a PWA.",
+      "A suite of age-appropriate word, puzzle, and trivia games built for a kid who just wants to play alongside the grown-ups. Kid-friendly versions of Wordle, the Mini Crossword, Spelling Bee, and trivia, built with React and shipping as a PWA.",
     image: "/tiny-times-games.png",
     href: "/tinkering/tiny-times-games",
   },
   {
-    title: "This Website",
+    title: "This website",
     description:
-      "My personal portfolio, rebuilt from scratch with Next.js, Tailwind CSS, and deployed to GitHub Pages. A meta experiment in owning my own platform.",
+      "The site you're on now, rebuilt from scratch so I could shape every detail and keep changing it as I do. Built with Next.js and Tailwind CSS, then deployed to GitHub Pages.",
     image: undefined,
     color: "bg-[#b8c4cc]",
     href: "/tinkering/this-website",

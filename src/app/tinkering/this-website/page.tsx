@@ -21,14 +21,14 @@ export default function ThisWebsite() {
           className="animate-fade-in-up mt-6 font-serif text-4xl leading-tight tracking-tight md:text-5xl lg:text-6xl"
           style={{ color: theme.text }}
         >
-          This Website
+          This website
         </h1>
         <p
           className="animate-fade-in-up animation-delay-200 mt-6 max-w-lg text-base leading-relaxed md:text-lg"
           style={{ color: theme.muted }}
         >
-          My personal portfolio, rebuilt from scratch — because owning your
-          platform matters.
+          The site you&apos;re on now, rebuilt from scratch so I could shape
+          every detail and keep changing it as I do.
         </p>
 
         <div className="animate-fade-in-up animation-delay-400 mt-12 space-y-8">
@@ -41,46 +41,47 @@ export default function ThisWebsite() {
               style={{ color: theme.muted }}
             >
               <p>
-                My portfolio lived on Wix for years. It worked fine, but I
-                wanted more control — over the design, the performance, and what
-                I could build on top of it. So I rebuilt it from scratch.
+                My portfolio lived on Wix for years. It did the job, but every
+                change felt like working around someone else&apos;s decisions. I
+                wanted the design, code, and content to belong to the same
+                system, so I rebuilt it.
               </p>
               <p>
-                The goal was simple: match the warmth and clarity of my existing
-                site while making it fully custom, accessible, and something I
-                could tinker with over time. The result is what you&apos;re
-                looking at right now.
+                More than a redesign, it became a way to practice the kind of
+                building I care about: making something warm, accessible, fast,
+                and easy to keep evolving. The time-based color and greeting are
+                part of that. The site should feel a little alive, not like a
+                static r&eacute;sum&eacute;.
               </p>
             </div>
           </div>
 
           <div>
             <h2 className="font-serif text-2xl" style={{ color: theme.text }}>
-              What I focused on
+              What mattered
             </h2>
             <ul
               className="mt-3 space-y-3 text-base leading-relaxed md:text-lg md:leading-relaxed"
               style={{ color: theme.muted }}
             >
               <li>
-                <strong style={{ color: theme.text }}>Design fidelity</strong> —
-                warm cream palette, Playfair Display headings, DM Sans body
-                copy, subtle fade-in animations
+                <strong style={{ color: theme.text }}>Personality:</strong> a
+                time-aware palette and greeting, expressive type, and motion
+                that stays out of the way
               </li>
               <li>
-                <strong style={{ color: theme.text }}>Accessibility</strong> —
-                semantic heading hierarchy, WCAG AA color contrast, visible
-                focus indicators, responsive layout
+                <strong style={{ color: theme.text }}>Accessibility:</strong>{" "}
+                semantic structure, WCAG AA contrast, visible focus states, and
+                responsive layouts
               </li>
               <li>
-                <strong style={{ color: theme.text }}>Performance</strong> —
-                static export means every page is pre-rendered HTML, no
-                client-side rendering needed
+                <strong style={{ color: theme.text }}>Speed:</strong> static
+                pages that load quickly and keep the hosting simple
               </li>
               <li>
-                <strong style={{ color: theme.text }}>Simplicity</strong> — no
-                CMS, no database, just code. Content lives right in the
-                components.
+                <strong style={{ color: theme.text }}>Room to change:</strong>{" "}
+                no CMS or database. The content lives with the code, so I can
+                keep tinkering.
               </li>
             </ul>
           </div>

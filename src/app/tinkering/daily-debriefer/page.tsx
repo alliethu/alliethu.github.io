@@ -28,8 +28,8 @@ export default function DailyDebriefer() {
           className="animate-fade-in-up animation-delay-200 mt-6 max-w-lg text-base leading-relaxed md:text-lg"
           style={{ color: theme.muted }}
         >
-          A personal leadership impact tracker built with AI, for people who
-          move too fast to notice how much they&apos;re doing.
+          A private leadership journal I built to make daily reflection useful
+          over time.
         </p>
 
         <div className="animate-fade-in-up animation-delay-400 mt-10 overflow-hidden rounded-2xl"
@@ -53,19 +53,15 @@ export default function DailyDebriefer() {
               style={{ color: theme.muted }}
             >
               <p>
-                Pulling together evidence of my own impact has always taken more
-                time than it should — not because the work isn&apos;t there, but
-                because I was never tracking it intentionally as it happened. The
-                days flow together, and without a forcing function to stop and
-                account for your own progress, the details just disappear.
+                I was doing a lot of work and struggling to remember the details
+                when it was time to reflect on impact or prepare for a 1:1. The
+                problem wasn&apos;t the work. I had no habit for capturing it
+                while it was fresh.
               </p>
               <p>
-                I also realized something while building it: &ldquo;these
-                updates take so much more time from my day than I ever expected.
-                I&apos;m glad I&apos;m documenting these things because it makes
-                me realize how much I&apos;m doing each day.&rdquo; That was the
-                first sign the tool was working — the act of logging was already
-                shifting something.
+                Building the journal gave me a small reason to pause each day.
+                Even before the AI synthesis, the act of logging helped me see
+                how much was happening and what deserved attention.
               </p>
             </div>
           </div>
@@ -78,10 +74,11 @@ export default function DailyDebriefer() {
               className="mt-3 text-base leading-relaxed md:text-lg md:leading-relaxed"
               style={{ color: theme.muted }}
             >
-              I built Daily Debriefer collaboratively with Claude — using it as
-              both a co-designer and a feature inside the product itself. The
-              prompt engineering process was as much a product design exercise as
-              the app itself.
+              I built Daily Debriefer with Next.js, Supabase, and the Anthropic
+              API. AI is part of the product, not just how I made it. It looks
+              across daily entries to help surface wins, tensions, shifts in
+              energy, and relationship dynamics. Those signals become useful
+              prompts for 1:1 preparation and longer-term reflection.
             </p>
           </div>
 
@@ -94,19 +91,16 @@ export default function DailyDebriefer() {
               style={{ color: theme.muted }}
             >
               <p>
-                After the first week I started hitting real friction and
-                responding to it:
+                After the first week, real use exposed the friction:
               </p>
               <ul className="list-disc space-y-2 pl-5">
                 <li>
-                  Added text formatting and voice input to reduce end-of-day
-                  resistance
+                  Added text formatting and voice input to make end-of-day
+                  reflection easier.
                 </li>
                 <li>
-                  Added end-of-day insights after noticing: &ldquo;I&apos;m not
-                  getting any dopamine hit or win or knowledge day to
-                  day&rdquo; — the weekly synthesis was too far away to feel
-                  motivating. I needed something that built incrementally.
+                  Added end-of-day insights when the weekly synthesis felt too
+                  far away. I needed the value to build incrementally.
                 </li>
               </ul>
             </div>
@@ -120,13 +114,11 @@ export default function DailyDebriefer() {
               className="mt-3 text-base leading-relaxed md:text-lg md:leading-relaxed"
               style={{ color: theme.muted }}
             >
-              After a full week of consistent use, reading the AI-generated
-              end-of-week synthesis — wins, patterns, tensions, one thing to
-              carry forward — was extremely gratifying. It helped me sit back and
-              reflect on how much progress and impact I was making when in my
-              head the days just blur together with very little external
-              validation. That&apos;s the gap this tool fills. And it only
-              emerged by using it honestly.
+              After a full week, the synthesis gave me something I rarely make
+              time for: a chance to step back and see the shape of the work. It
+              surfaced progress, patterns, and tensions that were hard to notice
+              day to day. That only became clear because I used the product
+              honestly.
             </p>
           </div>
 
@@ -138,9 +130,9 @@ export default function DailyDebriefer() {
               className="mt-3 text-base leading-relaxed md:text-lg md:leading-relaxed"
               style={{ color: theme.muted }}
             >
-              This is a working demonstration of how I think about product:
-              start with a real user need, build minimum viable, use it in
-              production, and iterate on observed behavior — not assumptions.
+              This project is a working example of how I like to build: start
+              with a real need, make the smallest useful version, use it, and let
+              observed behavior shape what comes next.
             </p>
           </div>
 

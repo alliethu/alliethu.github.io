@@ -27,16 +27,16 @@ const dmSerif = Playfair_Display({
 
 export const metadata: Metadata = {
   title: {
-    default: "Allie Thu — Design Leader & Systems Thinker",
+    default: "Allie Thu | Design leader and builder",
     template: "%s | Allie Thu",
   },
   description:
-    "Design leader who builds systems, frameworks, and cross-functional partnerships that create lasting change.",
+    "Design leader and builder at GitHub, leading Core UX Design across design systems and accessibility.",
   metadataBase: new URL("https://alliethu.com"),
   openGraph: {
-    title: "Allie Thu — Design Leader & Systems Thinker",
+    title: "Allie Thu | Design leader and builder",
     description:
-      "Design leader who builds systems, frameworks, and cross-functional partnerships that create lasting change.",
+      "Design leader and builder at GitHub, leading Core UX Design across design systems and accessibility.",
     url: "https://alliethu.com",
     siteName: "Allie Thu",
     locale: "en_US",
@@ -44,9 +44,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Allie Thu — Design Leader & Systems Thinker",
+    title: "Allie Thu | Design leader and builder",
     description:
-      "Design leader who builds systems, frameworks, and cross-functional partnerships that create lasting change.",
+      "Design leader and builder at GitHub, leading Core UX Design across design systems and accessibility.",
   },
 };
 

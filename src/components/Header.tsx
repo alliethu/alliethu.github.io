@@ -39,7 +39,7 @@ export default function Header() {
             className="block font-sans text-xs font-normal tracking-wide"
             style={{ color: theme.muted }}
           >
-            Design Leader &amp; Systems Thinker
+            Design leader and builder
           </span>
         </Link>
 

@@ -93,7 +93,7 @@ export default function TinyTimesGames() {
             >
               <p>
                 I built it in React using GitHub Copilot CLI, with a similar
-                collaborative rhythm to how I built Daily Debriefer. The suite
+                collaborative rhythm to how I built my leadership OS. The suite
                 includes kid-friendly versions of Wordle, the Mini Crossword,
                 Spelling Bee, and a trivia game, because he&apos;s obsessed with
                 facts and we sometimes play trivia separately anyway. Every game

@@ -5,16 +5,16 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "My tinkering",
   description:
-    "A collection of experiments, side projects, and creative explorations by Allie Thu.",
+    "Things Allie Thu built to solve a need, learn something, or follow an idea, including a leadership operating system and kid-friendly games.",
 };
 
 const projects = [
   {
-    title: "Daily Debriefer",
+    title: "My leadership OS",
     description:
-      "A private leadership journal I built to turn daily reflection into useful patterns. It captures wins, tensions, energy, and relationship dynamics, then uses AI to support 1:1 preparation and longer-term reflection. Built with Next.js, Supabase, and the Anthropic API.",
-    image: "/daily-debriefer.png",
-    href: "/tinkering/daily-debriefer",
+      "A private operating system I built to turn leadership context into useful action. What started as a daily debrief has grown into a living repository of decisions, commitments, and work, with custom skills and automations for weekly planning, product design, and technical sensemaking.",
+    visual: "leadership-os",
+    href: "/tinkering/leadership-os",
   },
   {
     title: "Tiny Times Games",
@@ -46,14 +46,15 @@ export default function Tinkering() {
           <em className="text-accent">&amp; side quests.</em>
         </h1>
         <p className="animate-fade-in-up animation-delay-200 mt-8 max-w-lg text-base leading-relaxed text-muted md:text-lg">
-          A space for the things I tinker with outside of my day-to-day:
-          creative explorations, learning experiments, and ideas I
-          couldn&apos;t let go of.
+          Things I built because I needed them, wanted to understand something,
+          or couldn&apos;t leave the idea alone.
         </p>
 
         <div className="mt-16 grid gap-8 sm:grid-cols-2">
           {projects.map((project, i) => {
             const cardClasses = `card-glow animate-fade-in-up-subtle group overflow-hidden rounded-2xl transition-all duration-300 ease-in-out ${
+              i === 0 ? "sm:col-span-2" : ""
+            } ${
               i === 0 ? "animation-delay-200" : ""
             } ${i === 1 ? "animation-delay-400" : ""} ${
               i === 2 ? "animation-delay-600" : ""
@@ -61,7 +62,37 @@ export default function Tinkering() {
 
             const cardContent = (
               <>
-                {project.image ? (
+                {project.visual === "leadership-os" ? (
+                  <div
+                    className="grid aspect-video w-full grid-cols-2 gap-3 p-5 sm:grid-cols-4 sm:p-7"
+                    style={{
+                      background:
+                        "linear-gradient(135deg, color-mix(in srgb, var(--accent) 18%, var(--card-bg)), var(--card-bg))",
+                    }}
+                    aria-hidden="true"
+                  >
+                    {["Capture", "Distill", "Apply", "Act"].map(
+                      (step, index) => (
+                        <div
+                          key={step}
+                          className="flex flex-col justify-between rounded-xl p-3 sm:p-4"
+                          style={{
+                            background: "var(--card-bg)",
+                            border:
+                              "1px solid color-mix(in srgb, var(--accent) 25%, transparent)",
+                          }}
+                        >
+                          <span className="font-mono text-[0.6rem] font-semibold text-accent">
+                            0{index + 1}
+                          </span>
+                          <span className="font-serif text-base text-foreground sm:text-lg">
+                            {step}
+                          </span>
+                        </div>
+                      ),
+                    )}
+                  </div>
+                ) : project.image ? (
                   <div className="aspect-video w-full overflow-hidden">
                     <Image
                       src={project.image}
